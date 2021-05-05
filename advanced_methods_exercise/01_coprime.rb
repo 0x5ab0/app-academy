@@ -3,12 +3,8 @@
 # The method should return false otherwise. For example coprime?(25, 12) is true because
 # 1 is the only number that divides both 25 and 12.
 
-def get_divisors(num)
-    (2...num).select { |divisor| num % divisor == 0 }
-end
-
-def coprime?(num1, num2)
-    return get_divisors(num1).none? { |n| get_divisors(num2).include?(n) }
+def coprime?(num_1, num_2)
+    (2..num_1).none? { |factor| num_1 % factor == 0 && num_2 % factor == 0}
 end
 
 p coprime?(25, 12)    # => true
