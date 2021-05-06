@@ -24,16 +24,16 @@ def vowel_counts(str)
     vowel_count
 end
 
-def caesar_cipher(message, num)
-    alphabet = 'abcdefghijklmnopqrstuvwxyz'
+def caesar_cipher(message, offset)
+    alphabet = ('a'..'z').to_a
     new_message = ''
 
-    message.each_char.each_with_index do |char, i|
+    message.each_char do |char|
         if alphabet.include?(char)
             current_index = alphabet.index(char)
-            offset = (current_index + num) % alphabet.length
+            new_index = (current_index + offset) % alphabet.length
     
-            new_message += alphabet[offset]
+            new_message += alphabet[new_index]
         else
             new_message += char
         end
