@@ -8,8 +8,7 @@ def palindrome?(str)
         i -= 1
     end
 
-    return true if str == rev_str
-    false
+    str == rev_str
 end
 
 def substrings(str)

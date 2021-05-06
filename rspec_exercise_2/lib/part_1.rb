@@ -45,9 +45,5 @@ def power_of_two?(num)
     # 2 ** i = num  ==  i * log(2) = log(num)
     i = (Math.log(num)/Math.log(2)).truncate
 
-    if 2 ** i == num
-        return true
-    else
-        return false
-    end
+    2 ** i == num
 end
