@@ -11,7 +11,13 @@
 
 
 def my_rotate!(array, amt)
-
+    temp_array = []
+    array.each { |el| temp_array << el }
+    
+    (0...array.length).each do |i|
+        array[i] = temp_array[(i + amt) % array.length]
+    end
+    array
 end
 
 
