@@ -8,24 +8,16 @@ class Code
     "Y" => :yellow
   }
 
+  attr_reader :pegs
+
   def self.valid_pegs?(chars)
     chars.all? do |char|
       POSSIBLE_PEGS.keys.include?(char.upcase)
     end
   end
 
-  attr_reader :pegs
-
-  def initialize(chars)
-    if Code.valid_pegs?(chars)
-      @pegs = chars.map!(&:upcase)
-    else
-      raise "Error: you've entered one or more invalid characters."
-    end
-  end
-
   def self.random(length)
-    new_pegs = Array.new(length, POSSIBLE_PEGS.keys.sample) 
+    new_pegs = Array.new(length) { POSSIBLE_PEGS.keys.sample } 
     Code.new(new_pegs)
   end
 
@@ -34,6 +26,14 @@ class Code
     Code.new(pegs_array)
   end
 
+  def initialize(chars)
+    if Code.valid_pegs?(chars)
+      @pegs = chars.map!(&:upcase)
+    else
+      raise "Error: you've entered one or more invalid characters."
+    end
+  end
+  
   def [](i)
     @pegs[i]
   end

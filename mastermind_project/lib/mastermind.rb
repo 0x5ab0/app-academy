@@ -6,8 +6,8 @@ class Mastermind
     end
 
     def print_matches(code)
-        puts @secret_code.num_exact_matches(code)
-        puts @secret_code.num_near_matches(code)
+        puts "Exact matches: #{@secret_code.num_exact_matches(code)}"
+        puts "Near matches: #{@secret_code.num_near_matches(code)}"
     end
 
     def ask_user_for_guess
