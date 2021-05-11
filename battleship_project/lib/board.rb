@@ -1,5 +1,11 @@
 class Board
     attr_reader :size
+    
+    def self.print_grid(grid)
+        (0...grid.length).each do |row|
+            puts grid[row].join(' ')
+        end
+    end
 
     def initialize(n)
         # 2D Array w/ n columns and n rows, all elements of which are :N
@@ -18,9 +24,7 @@ class Board
     end
 
     def num_ships
-        count = 0
-        @grid.each { |row| count += row.count(:S) }
-        count
+        @grid.flatten.count { |cell| cell == :S }
     end
 
     def attack(position)
@@ -35,37 +39,25 @@ class Board
     end
 
     def place_random_ships
-        num_ships = @size / 4
+        total_ships = @size / 4
 
-        while num_ships > 0 do
+        while self.num_ships < total_ships do
             row = rand(@grid.length)
             column = rand(@grid.length)
 
-            # if position already has ship, try again
-            if self[[row, column]] == :S
-                num_ships += 1
-            # if not, add ship
-            else
-                self[[row, column]] = :S
-            end
-
-            num_ships -= 1
+            self[[row, column]] = :S
         end
     end
 
     def hidden_ships_grid
-        @grid.map { |row| row.map do |cell|
-            if cell == :S
-                :N
-            else
-                cell
+        @grid.map do |row|
+            row.map do |cell|
+                if cell == :S
+                    :N
+                else
+                    cell
+                end
             end
-        end }
-    end
-
-    def self.print_grid(grid)
-        (0...grid.length).each do |row|
-            puts grid[row].join(' ')
         end
     end
 
