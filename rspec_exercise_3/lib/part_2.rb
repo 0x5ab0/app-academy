@@ -10,7 +10,7 @@ end
 
 def char_replace!(str, hash)
     str.each_char.with_index do |char, i|
-        str[i] = hash[char] if hash[char]
+        str[i] = hash[char] if hash.has_key?(char)
     end
 
     str
