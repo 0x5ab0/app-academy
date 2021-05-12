@@ -5,8 +5,7 @@ def proper_factors(num)
 end
 
 def aliquot_sum(num)
-    factors = proper_factors(num)
-    factors.sum
+    proper_factors(num).sum
 end
 
 def perfect_number?(num)
@@ -14,16 +13,12 @@ def perfect_number?(num)
 end
 
 def ideal_numbers(n)
-    count = 0
     arr = []
 
     i = 0
-    while count < n
+    while arr.length < n
         i += 1
-        if perfect_number?(i)
-            arr << i
-            count += 1
-        end
+        arr << i if perfect_number?(i)
     end
 
     arr
