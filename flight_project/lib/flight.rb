@@ -12,13 +12,13 @@ class Flight
     end
 
     def board_passenger(passenger)
-        if !self.full?
-            @passengers << passenger if passenger.has_flight?(@flight_number)
+        if !self.full? && passenger.has_flight?(@flight_number)
+            @passengers << passenger
         end
     end
 
     def list_passengers
-        @passengers.collect { |passenger| passenger.name }
+        @passengers.collect(&:name)
     end
 
     def [](i)
