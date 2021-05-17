@@ -5,8 +5,17 @@ class HumanPlayer
         @mark = mark_value
     end
 
-    def get_position
+    def get_position(legal_positions)
         puts "Player #{@mark}, enter two numbers representing a position in the format 'row col'"
-        gets.chomp.split(' ').map(&:to_i)
-    end 
+        pos = nil
+        while pos == nil
+            pos = gets.chomp.split(' ').map(&:to_i)
+            
+            if !legal_positions.include?(pos)
+                pos = nil
+                puts 'Invalid choice. Choose an empty position!'
+            end
+        end
+        pos
+    end
 end

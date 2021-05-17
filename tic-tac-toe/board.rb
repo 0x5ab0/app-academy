@@ -62,4 +62,10 @@ class Board
         positions = indices.product(indices)
         positions.any? { |pos| self.empty?(pos) }
     end
+
+    def legal_positions
+        indices = (0...@grid.length).to_a
+        positions = indices.product(indices)
+        positions.select { |pos| self.empty?(pos) }
+    end
 end
