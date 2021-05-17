@@ -1,6 +1,6 @@
 class Board
-    def initialize
-        @grid = Array.new(3) { Array.new(3, '_') }
+    def initialize(n)
+        @grid = Array.new(n) { Array.new(n, '_') }
     end
 
     def [](pos)
@@ -58,11 +58,8 @@ class Board
     end
 
     def empty_positions?
-        (0...@grid.length).any? do |row|
-            (0...@grid.length).any? do |col|
-                pos = [row, col]
-                self.empty?(pos)
-            end
-        end
+        indices = (0...@grid.length).to_a
+        positions = indices.product(indices)
+        positions.any? { |pos| self.empty?(pos) }
     end
 end
