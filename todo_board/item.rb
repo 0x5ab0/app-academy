@@ -8,18 +8,23 @@ class Item
         true
     end
 
-    attr_reader :deadline
+    attr_reader :deadline, :done
     attr_accessor :title, :description
 
     def initialize(title, deadline, description)
         @title = title
         @deadline = deadline
         @description = description
+        @done = false
         raise 'Invalid date. Make sure the entered format is YYYY-MM-DD.' if !Item.valid_date?(deadline)
     end
 
     def deadline=(new_deadline)
         raise 'Invalid date. Make sure the entered format is YYYY-MM-DD.' if !Item.valid_date?(new_deadline)
-        @deadline = new_deadline
+        @deadline = new_deadline 
+    end
+
+    def toggle
+        @done = !@done
     end
 end

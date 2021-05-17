@@ -1,10 +1,11 @@
 require_relative 'item.rb'
 
 class List
-    LINE_WIDTH = 42
+    LINE_WIDTH = 49
     INDEX_COL_WIDTH = 5
     ITEM_COL_WIDTH = 20
     DEADLINE_COL_WIDTH = 10
+    DONE_COL_WIDTH = 5
 
     attr_accessor :label
 
@@ -44,12 +45,13 @@ class List
 
     def print
         puts '-' * LINE_WIDTH
-        puts ' ' * 16 + self.label.upcase
+        puts self.label.to_s.upcase.center(LINE_WIDTH)
         puts '-' * LINE_WIDTH
-        puts "#{'Index'.ljust(INDEX_COL_WIDTH)} | #{'Item'.ljust(ITEM_COL_WIDTH)} | #{'Deadline'.ljust(DEADLINE_COL_WIDTH)}"
+        puts "#{'Index'.ljust(INDEX_COL_WIDTH)} | #{'Item'.ljust(ITEM_COL_WIDTH)} | #{'Deadline'.ljust(DEADLINE_COL_WIDTH)} | #{'Done?'.ljust(DONE_COL_WIDTH)}"
         puts '-' * LINE_WIDTH
+
         @items.each_with_index do |item, i|
-            puts "#{i.to_s.ljust(INDEX_COL_WIDTH)} | #{item.title.ljust(ITEM_COL_WIDTH)} | #{item.deadline.ljust(DEADLINE_COL_WIDTH)}"
+            puts "#{i.to_s.ljust(INDEX_COL_WIDTH)} | #{item.title.ljust(ITEM_COL_WIDTH)} | #{item.deadline.ljust(DEADLINE_COL_WIDTH)} | #{(item.done ? '[✓]' : '[ ]').ljust(DONE_COL_WIDTH)}"
         end
         puts '-' * LINE_WIDTH
     end
@@ -58,7 +60,7 @@ class List
         item = self[index]
         return if item.nil?
         puts '-' * LINE_WIDTH
-        puts "#{item.title.ljust(LINE_WIDTH/2)}#{item.deadline.rjust(LINE_WIDTH/2)}"
+        puts "#{item.title.ljust(LINE_WIDTH - DEADLINE_COL_WIDTH - DONE_COL_WIDTH)}#{item.deadline.rjust(DEADLINE_COL_WIDTH)}#{(item.done ? '[✓]' : '[ ]').rjust(DONE_COL_WIDTH)}"
         puts item.description
         puts '-' * LINE_WIDTH
     end
@@ -89,5 +91,19 @@ class List
 
     def sort_by_date!
         @items.sort_by! { |item| item.deadline }
+    end
+
+    def toggle_item(index)
+        self[index].toggle
+    end
+
+    def remove_item(index)
+        return false if !valid_index?(index)
+        @items.delete_at(index)
+        true
+    end
+
+    def purge
+        @items.reject! { |item| item.done }
     end
 end
