@@ -1,5 +1,3 @@
-require 'byebug'
-
 class Array
     def my_each(&prc)
         i = 0
