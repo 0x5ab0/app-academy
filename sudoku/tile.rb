@@ -1,13 +1,30 @@
 require 'colorize'
 
 class Tile
-    def initialize(value, given = false)
+    attr_reader :value
+
+    def initialize(value)
         @value = value
-        @given = given
+        @given = value == 0 ? false : true
+    end
+
+    def color
+        given? ? :light_blue : :green
+    end
+
+    def given?
+        @given
     end
 
     def to_s
-        # show @value as a string
-        # distinguish between given and non-given tiles with the 'colorize' gem 
+        @value == 0 ? " " : @value.to_s.colorize(color)
+    end
+
+    def value=(new_value)
+        if given?
+            puts "You can't change the value of a given tile."
+        else
+            @value = new_value
+        end
     end
 end
