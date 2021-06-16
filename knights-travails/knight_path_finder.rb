@@ -13,14 +13,17 @@ class KnightPathFinder
     ]
 
     def self.valid_moves(pos)
+        valid_moves = []
         x, y = pos
 
-        DELTAS.map do |(dx, dy)|
+        DELTAS.each do |(dx, dy)|
             new_pos = [x + dx, y + dy]
             unless KnightPathFinder.out_of_bounds(new_pos)
-                new_pos
+                valid_moves << new_pos
             end
         end
+
+        valid_moves
     end
 
     def self.out_of_bounds(pos)
@@ -30,22 +33,29 @@ class KnightPathFinder
 
     attr_reader :start_pos
 
-    def initialize(pos)
-        @start_pos = pos
-        @considered_positions = [pos]
+    def initialize(start_pos)
+        @start_pos = start_pos
+        @considered_positions = [start_pos]
         
         build_move_tree
+    end
+
+    def find_path(end_pos)
+        end_node = @root_node.dfs(end_pos)
+
+        trace_path_back(end_node)
+            .reverse
+            .map(&:value)
     end
 
     private
 
     attr_accessor :root_node, :considered_positions
 
-    def new_move_positions
-        KnightPathFinder.valid_moves(@start_pos)
-            .reject { |pos| @considered_positions.include?(pos) }
-            .each { |pos| @considered_positions << pos }
-        end
+    def new_move_positions(pos)
+        KnightPathFinder.valid_moves(pos)
+            .reject { |new_pos| @considered_positions.include?(new_pos) }
+            .each { |new_pos| @considered_positions << new_pos }
     end
 
     def build_move_tree
@@ -64,9 +74,20 @@ class KnightPathFinder
         end
     end
 
-    def find_path(goal)
+    def trace_path_back(end_node)
+        nodes = []
 
+        current_node = end_node
+        until current_node.nil?
+            nodes << current_node
+            current_node = current_node.parent
+        end
+
+        nodes
     end
 end
 
-kpf = KnightPathFinder.new([0, 0])
+if $PROGRAM_NAME == __FILE__
+    kpf = KnightPathFinder.new([0, 0])
+    p kpf.find_path([7,7])
+  end
