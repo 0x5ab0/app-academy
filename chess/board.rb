@@ -61,7 +61,7 @@ class Board
     private
 
     def make_starting_grid(fill_board)
-        @rows = Array.new(8) { Array.new(8, sentinel) }
+        @rows = Array.new(8) { Array.new(8, @sentinel) }
         return unless fill_board
         
         %i(white black).each do |color|
