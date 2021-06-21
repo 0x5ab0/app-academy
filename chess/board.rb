@@ -1,54 +1,89 @@
-require 'byebug'
-require_relative 'piece'
+require_relative 'pieces/pawn.rb'
+require_relative 'pieces/rook.rb'
+require_relative 'pieces/knight.rb'
+require_relative 'pieces/bishop.rb'
+require_relative 'pieces/king.rb'
+require_relative 'pieces/queen.rb'
+require_relative 'pieces/nullpiece.rb'
 
 class Board
     attr_reader :rows
 
-    def initialize
-        @rows = Array.new(8) { Array.new(8) { nil } }
-
-        for row in (0..7)
-            next if row.between?(2, 5)
-            for col in (0..7)
-                pos = [row, col]
-                self[pos] = Piece.new(pos)
-            end
-        end
+    def initialize(fill_board = true)
+        @sentinel = NullPiece.instance
+        make_starting_grid(fill_board)
     end
 
     def [](pos)
+        raise "Invalid position" unless valid_pos?(pos)
+        
         row, col = pos
         @rows[row][col]
     end
 
     def []=(pos, piece)
+        raise "Invalid position" unless valid_pos?(pos)
+
         row, col = pos
         @rows[row][col] = piece
     end
 
-    # def print
-    #     for row in @rows
-    #         for col in row
-    #             if col.nil?
-    #                 p nil
-    #             else
-    #                 p col.pos
-    #             end
-    #         end
-    #     end
-    # end
+    def add_piece(piece, pos)
+        raise "Position not empty" unless empty?(pos)
+
+        self[pos] = piece
+    end
+
+    def empty?(pos)
+        self[pos].empty?
+    end
 
     def move_piece(start_pos, end_pos)
-        raise "There's no piece there to move" if self[start_pos].nil? 
-        raise "Cannot move the piece to that position" unless self[end_pos].nil?
+        raise "Start position is empty" if empty?(start_pos)
 
-        # Store Piece instance
         piece = self[start_pos]
-        # Update grid (piece leaves start_pos)
-        self[start_pos] = nil
-        # Update Piece's position
-        piece.pos = end_pos
-        # Update grid (piece goes to end_pos)
+        raise "This piece can't move like that" unless piece.moves.include?(end_pos)
         self[end_pos] = piece
+        self[start_pos] = sentinel
+        piece.pos = end_pos
+
+        nil
+    end
+
+    def pieces
+        @rows.flatten.reject(&:empty?)
+    end
+
+    def valid_pos?(pos)
+        pos.all? { |coord| coord.between?(0, 7) }
+    end
+
+    private
+
+    def make_starting_grid(fill_board)
+        @rows = Array.new(8) { Array.new(8, sentinel) }
+        return unless fill_board
+        
+        %i(white black).each do |color|
+            fill_back_row(color)
+            fill_pawns_row(color)
+        end
+    end
+
+    def fill_back_row(color)
+        back_pieces = [
+            Rook, Knight, Bishop, Queen, King, Bishop, Knight, Rook
+        ]
+
+        i = color == :white ? 7 : 0
+        back_pieces.each_with_index do |piece_class, j|
+            piece_class.new(color, self, [i, j])
+        end
+    end
+
+    def fill_pawns_row(color)
+        i = color == :white ? 6 : 1
+        8.times { |j| Pawn.new(color, self, [i, j]) }
     end
 end
+
