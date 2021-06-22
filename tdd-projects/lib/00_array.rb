@@ -1,58 +1,64 @@
-# Removes duplicates from an array, returning all unique
-# elements in the order in which they first appeared
 def my_uniq(array)
-    array.inject([]) do |uniq_array, el|
-        uniq_array << el unless uniq_array.include?(el)
-        uniq_array
-    end
+  uniq_array = []
+
+  array.each do |el|
+    uniq_array << el unless uniq_array.include?(el)
+  end
+
+  uniq_array
 end
 
-# Finds all pairs of positions where the elements at those
-# positions sum to zero
+# Alternatively with inject:
+#
+# def my_uniq(array)
+#   array.inject([]) do |uniq_array, el|
+#     uniq_array << el unless uniq_array.include?(el)
+#     uniq_array
+#   end
+# end
+
 def two_sum(array)
-    pairs = []
+  pairs = []
 
-    array.count.times do |i|
-        (i + 1).upto(array.count - 1) do |j|
-            pairs << [i, j] if array[i] + array[j] == 0
-        end
+  array.count.times do |i1|
+    (i1 + 1).upto(array.count - 1) do |i2|
+      pairs << [i1, i2] if array[i1] + array[i2] == 0
     end
+  end
 
-    pairs
+  pairs
 end
 
-# Converts between the row-oriented and column-oriented
-# representations of a matrix
-def my_transpose(array)
-    size = rows.first.count
-    cols = Array.new(size) { Array.new(size) }
+def my_transpose(rows)
+  dimension = rows.first.count
+  cols = Array.new(dimension) { Array.new(dimension) }
 
-    size.times do |i|
-        size.times do |j|
-            cols[i][j] = rows[i][j]
-        end
+  dimension.times do |i|
+    dimension.times do |j|
+      cols[j][i] = rows[i][j]
     end
+  end
 
-    cols
+  cols
 end
 
-# Takes an array of stock prices (prices on days 0, 1, ...),
-# and outputs the most profitable pair of days on which to
-# first buy the stock and then sell the stock.
 def pick_stocks(prices)
-    best_pair = nil
-    best_profit = 0
+  # can always make zero dollars by not buying/selling
+  best_pair = nil
+  best_profit = 0
 
-    prices.each_index do |buy_date|
-        prices.each_index do |sell_date|
-            next if sell_sate < buy_date
+  prices.each_index do |buy_date|
+    prices.each_index do |sell_date|
+      # can't sell before buy
+      next if sell_date < buy_date
 
-            profit = prices[sell_date] - prices[buy_date]
-            if profit > best_profit
-                best_pair, best_profit = [buy_date, sell_date], profit
-            end
-        end
+      profit = prices[sell_date] - prices[buy_date]
+      if profit > best_profit
+        # Choose best days. Greed is good.
+        best_pair, best_profit = [buy_date, sell_date], profit
+      end
     end
+  end
 
-    best_pair
+  best_pair
 end

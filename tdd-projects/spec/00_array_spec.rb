@@ -40,7 +40,7 @@ describe "two_sum" do
 end
 
 describe "my_transpose" do
-    if "transposes a matrix" do
+    it "transposes a matrix" do
         matrix = [
             [1, 2, 3],
             [4, 5, 6],
@@ -52,7 +52,6 @@ describe "my_transpose" do
             [2, 5, 8],
             [3, 6, 9]
         ])
-        end
     end
 end
 
