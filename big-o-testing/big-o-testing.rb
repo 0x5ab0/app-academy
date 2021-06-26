@@ -68,3 +68,30 @@ def linear_biggest_octopus(fishes)
 
     biggest_fish
 end
+
+# OCTOPUS DANCING
+
+# Linear, O(n)
+
+def slow_dance(direction, tiles_array)
+    tiles_array.each_with_index do |tile, index|
+        return index if tile == direction
+    end
+end
+
+# Constant, O(1)
+
+tiles_hash = {
+    "up" => 0,
+    "right-up" => 1,
+    "right"=> 2,
+    "right-down" => 3,
+    "down" => 4,
+    "left-down" => 5,
+    "left" => 6,
+    "left-up" => 7
+}
+
+def fast_dance(direction, tiles_hash)
+    tiles_hash[direction]
+end
