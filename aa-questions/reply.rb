@@ -49,14 +49,14 @@ class Reply
         reply_data.empty? ? nil : reply_data.map { |reply| Reply.new(reply) }
     end
 
-    def self.find_by_author_id(author_id)
-        reply_data = QuestionsDatabase.instance.execute(<<-SQL, author_id: author_id)
+    def self.find_by_user_id(user_id)
+        reply_data = QuestionsDatabase.instance.execute(<<-SQL, user_id: user_id)
             SELECT
                 replies.*
             FROM
                 replies
             WHERE
-                replies.author_id = :author_id
+                replies.author_id = :user_id
         SQL
 
         reply_data.empty? ? nil : reply_data.map { |reply| Reply.new(reply) }
@@ -71,5 +71,21 @@ class Reply
         @parent_reply_id = options['parent_reply_id']
         @author_id = options['author_id']
         @body = options['body']
+    end
+
+    def author
+        User.find_by_id(self.author_id)
+    end
+
+    def question
+        Question.find_by_id(self.question_id)
+    end
+
+    def parent_reply
+        Reply.find_by_id(self.parent_reply_id)
+    end
+
+    def child_replies
+        Reply.find_by_parent_reply_id(self.id)
     end
 end
