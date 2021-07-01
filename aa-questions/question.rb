@@ -54,6 +54,39 @@ class Question
         @body = options['body']
     end
 
+    def attrs
+        {
+            author_id: author_id,
+            title: title,
+            body: body
+        }
+    end
+
+    def save
+        if self.id
+            QuestionsDatabase.execute(<<-SQL, attrs.merge({ id: id }))
+                UPDATE
+                    questions
+                SET
+                    author_id = :author_id,
+                    title = :title,
+                    body = :body
+                WHERE
+                    questions.id = :id
+            SQL
+        else
+            QuestionsDatabase.execute(<<-SQL, id: id, author_id: author_id, title: title, body: body)
+                INSERT INTO
+                    questions (author_id, title, body)
+                VALUEs
+                    (:author_id, :title, :body)
+            SQL
+
+            @id = QuestionsDatabase.last_insert_row_id
+        end
+        self
+    end
+
     def author
         User.find_by_id(self.author_id)
     end

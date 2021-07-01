@@ -73,6 +73,41 @@ class Reply
         @body = options['body']
     end
 
+    def attrs
+        {
+            question_id: question_id,
+            parent_reply_id: parent_reply_id,
+            author_id: author_id,
+            body: body
+        }
+    end
+
+    def save
+        if self.id
+            QuestionsDatabase.execute(<<-SQL, attrs.merge({ id: id }))
+                UPDATE
+                    replies
+                SET
+                    question_id = :question_id,
+                    parent_reply_id = :parent_reply_id,
+                    author_id = :author_id,
+                    body = :body,
+                WHERE
+                    replies.id = :id
+            SQL
+        else
+            QuestionsDatabase.execute(<<-SQL, attrs.merge({ id: id }))
+                INSERT INTO
+                    replies (question_id, parent_reply_id, author_id, body)
+                VALUEs
+                    (:question_id, :parent_reply_id, :author_id, :body)
+            SQL
+
+            @id = QuestionsDatabase.last_insert_row_id
+        end
+        self
+    end
+
     def author
         User.find_by_id(self.author_id)
     end

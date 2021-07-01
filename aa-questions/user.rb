@@ -45,6 +45,37 @@ class User
         @lname = options['lname']
     end
 
+    def attrs
+        {
+            fname: fname,
+            lname: lname
+        }
+    end
+
+    def save
+        if self.id
+            QuestionsDatabase.execute(<<-SQL, attrs.merge({ id: id }))
+                UPDATE
+                    users
+                SET
+                    fname = :fname,
+                    lname = :lname
+                WHERE
+                    users.id = :id
+            SQL
+        else
+            QuestionsDatabase.execute(<<-SQL, id: id, fname: fname, lname: lname)
+                INSERT INTO
+                    users (fname, lname)
+                VALUES
+                    (:fname, :lname)
+            SQL
+
+            @id = QuestionsDatabase.last_insert_row_id
+        end
+        self
+    end
+
     def authored_questions
         Question.find_by_author_id(self.id)
     end
