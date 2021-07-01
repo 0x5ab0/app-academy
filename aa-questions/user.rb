@@ -52,4 +52,30 @@ class User
     def authored_replies
         Reply.find_by_user_id(self.id)
     end
+
+    def followed_questions
+        QuestionFollow.followed_questions_for_user_id(self.id)
+    end
+
+    def liked_questions
+        QuestionLike.liked_questions_for_user_id(self.id)
+    end
+
+    def average_karma
+        karma_data = QuestionsDatabase.instance.execute(<<-SQL, author_id: self.id)
+            SELECT
+                CAST(COUNT(question_likes.id) AS FLOAT) /
+                    COUNT(DISTINCT(questions.id)) AS avg_karma
+            FROM
+                questions
+            LEFT JOIN
+                question_likes
+            ON
+                questions.id = question_likes.question_id
+            WHERE
+                questions.author_id = :author_id
+        SQL
+        
+        karma_data.first['avg_karma']
+    end
 end

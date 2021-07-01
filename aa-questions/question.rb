@@ -36,6 +36,14 @@ class Question
         question_data.empty? ? nil : question_data.map { |question| Question.new(question) }
     end
 
+    def self.most_followed(n)
+        QuestionFollow.most_followed_questions(n)
+    end
+
+    def self.most_liked
+        QuestionLike.most_liked_questions(n)
+    end
+
     attr_reader :id
     attr_accessor :author_id, :title, :body
 
@@ -52,5 +60,17 @@ class Question
 
     def replies
         Reply.find_by_question_id(self.id)
+    end
+
+    def followers
+        QuestionFollow.followers_for_question_id(self.id)
+    end
+
+    def likers
+        QuestionLike.likers_for_question_id(self.id)
+    end
+
+    def num_likes
+        QuestionLike.num_likes_for_question_id(self.id)
     end
 end

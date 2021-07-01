@@ -49,12 +49,75 @@ class QuestionLike
         like_data.empty? ? nil : like_data.map { |like| QuestionLike.new(like) }
     end
 
-    attr_reader :id
-    attr_accessor :user_id, :question_id
+    def self.likers_for_question_id(question_id)
+        user_data = QuestionsDatabase.instance.execute(<<-SQL, question_id: question_id)
+            SELECT
+                users.*
+            FROM
+                question_likes
+            LEFT JOIN
+                users
+            ON
+                question_likes.user_id = users.id
+            WHERE
+                question_likes.question_id = :question_id
+        SQL
 
-    def initialize(options)
-        @id = options['id']
-        @user_id = options['user_id']
-        @question_id = options['question_id']
+        user_data.empty? ? nil : user_data.map { |user| User.new(user) }
+    end
+
+    def self.num_likes_for_question_id(question_id)
+        like_data = QuestionsDatabase.instance.execute(<<-SQL, question_id: question_id)
+            SELECT
+                COUNT(*) AS num_likes
+            FROM
+                question_likes
+            LEFT JOIN
+                questions
+            ON
+                question_likes.question_id = questions.id
+            WHERE
+                question_likes.question_id = :question_id
+        SQL
+
+        like_data.first['num_likes']
+    end
+
+    def self.liked_questions_for_user_id(user_id)
+        question_data = QuestionsDatabase.instance.execute(<<-SQL, user_id: user_id)
+            SELECT
+                questions.*
+            FROM
+                question_likes
+            LEFT JOIN
+                questions
+            ON
+                question_likes.question_id = questions.id
+            WHERE
+                question_likes.user_id = :user_id
+        SQL
+
+        question_data.empty? ? nil : question_data.map { |question| Question.new(question) }
+    end
+
+    def self.most_liked_questions(n)
+        question_data = QuestionsDatabase.instance.execute(<<-SQL, limit: n)
+            SELECT
+                questions.*, COUNT(question_likes.user_id) AS likes
+            FROM
+                question_likes
+            LEFT JOIN
+                questions
+            ON
+                question_likes.question_id = questions.id
+            GROUP BY
+                questions.id
+            ORDER BY
+                likes DESC
+            LIMIT
+                :limit
+        SQL
+
+        question_data.empty? ? nil : question_data.map { |question| Question.new(question) }
     end
 end
