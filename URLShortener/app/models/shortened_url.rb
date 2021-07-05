@@ -1,6 +1,11 @@
 class ShortenedUrl < ApplicationRecord
-    validates :long_url, :short_url, :submitter_id, presence: true
+    validates :long_url, :short_url, :user_id, presence: true
     validates :short_url, uniqueness: true
+
+    has_many :visits,
+        class_name: 'Visit',
+        foreign_key: :shortened_url_id,
+        primary_key: :id
 
     def self.random_code
         loop do
