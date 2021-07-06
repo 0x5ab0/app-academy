@@ -1,5 +1,5 @@
 class ShortenedUrl < ApplicationRecord
-    validates :long_url, :short_url, :user_id, presence: true
+    validates :long_url, :short_url, :submitter_id, presence: true
     validates :short_url, uniqueness: true
 
     has_many :visits,
