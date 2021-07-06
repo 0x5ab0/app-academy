@@ -23,7 +23,7 @@
 
 def find_angelina
   #find Angelina Jolie by name in the actors table
-
+  
 end
 
 def top_titles
