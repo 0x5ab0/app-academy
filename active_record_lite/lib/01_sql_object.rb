@@ -101,7 +101,18 @@ class SQLObject
   end
 
   def update
-    # ...
+    set_line = self.class.columns
+      .map { |attr| "#{attr} = ?" }
+      .join(', ')
+
+    DBConnection.execute(<<-SQL, *attribute_values, id)
+      UPDATE
+        #{self.class.table_name}
+      SET
+        #{set_line}
+      WHERE
+        #{self.class.table_name}.id = ?
+      SQL
   end
 
   def save
