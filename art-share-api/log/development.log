@@ -1915,3 +1915,138 @@ Processing by CommentsController#index as */*
 Completed 200 OK in 3ms (Views: 1.7ms | ActiveRecord: 0.3ms)
 
 
+Started GET "/users/?josep" for ::1 at 2021-07-14 16:55:35 +0200
+Processing by UsersController#index as */*
+  Parameters: {"josep"=>nil}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:9
+Completed 200 OK in 9ms (Views: 3.2ms | ActiveRecord: 3.0ms)
+
+
+Started GET "/users/?query=jos" for ::1 at 2021-07-14 16:55:41 +0200
+Processing by UsersController#index as */*
+  Parameters: {"query"=>"jos"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:9
+Completed 200 OK in 2ms (Views: 0.9ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/users/?query=jos" for ::1 at 2021-07-14 16:56:10 +0200
+Processing by UsersController#index as */*
+  Parameters: {"query"=>"jos"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE (username LIKE '%jos%')[0m
+  ↳ app/controllers/users_controller.rb:9
+Completed 200 OK in 5ms (Views: 1.0ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/users/?jos" for ::1 at 2021-07-14 16:56:14 +0200
+Processing by UsersController#index as */*
+  Parameters: {"jos"=>nil}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:9
+Completed 200 OK in 5ms (Views: 3.0ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/users/?query=%22jo%22" for ::1 at 2021-07-14 16:56:23 +0200
+Processing by UsersController#index as */*
+  Parameters: {"query"=>"\"jo\""}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE (username LIKE '%"jo"%')[0m
+  ↳ app/controllers/users_controller.rb:9
+Completed 200 OK in 1ms (Views: 0.7ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/users/?query=%22josep%22" for ::1 at 2021-07-14 16:56:26 +0200
+Processing by UsersController#index as */*
+  Parameters: {"query"=>"\"josep\""}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE (username LIKE '%"josep"%')[0m
+  ↳ app/controllers/users_controller.rb:9
+Completed 200 OK in 2ms (Views: 0.9ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/users/?query=%22osep%22" for ::1 at 2021-07-14 16:56:31 +0200
+Processing by UsersController#index as */*
+  Parameters: {"query"=>"\"osep\""}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE (username LIKE '%"osep"%')[0m
+  ↳ app/controllers/users_controller.rb:9
+Completed 200 OK in 1ms (Views: 0.5ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/users/?query=%22Josep%22" for ::1 at 2021-07-14 16:56:33 +0200
+Processing by UsersController#index as */*
+  Parameters: {"query"=>"\"Josep\""}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE (username LIKE '%"Josep"%')[0m
+  ↳ app/controllers/users_controller.rb:9
+Completed 200 OK in 1ms (Views: 0.7ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/users/?query=%22Satoshi%22" for ::1 at 2021-07-14 16:56:37 +0200
+Processing by UsersController#index as */*
+  Parameters: {"query"=>"\"Satoshi\""}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE (username LIKE '%"Satoshi"%')[0m
+  ↳ app/controllers/users_controller.rb:9
+Completed 200 OK in 2ms (Views: 0.9ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/users/?%22query%22=%22Satoshi%22" for ::1 at 2021-07-14 16:57:13 +0200
+Processing by UsersController#index as */*
+  Parameters: {"\"query\""=>"\"Satoshi\""}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:9
+Completed 200 OK in 2ms (Views: 1.5ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/users/" for ::1 at 2021-07-14 16:57:21 +0200
+Processing by UsersController#index as */*
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:9
+Completed 200 OK in 2ms (Views: 1.1ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/users/?query" for ::1 at 2021-07-14 16:57:23 +0200
+Processing by UsersController#index as */*
+  Parameters: {"query"=>nil}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:9
+Completed 200 OK in 2ms (Views: 1.1ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/users/?query=" for ::1 at 2021-07-14 16:57:25 +0200
+Processing by UsersController#index as */*
+  Parameters: {"query"=>""}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE (username LIKE '%%')[0m
+  ↳ app/controllers/users_controller.rb:9
+Completed 200 OK in 2ms (Views: 0.9ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/users/?query=%22%22" for ::1 at 2021-07-14 16:57:27 +0200
+Processing by UsersController#index as */*
+  Parameters: {"query"=>"\"\""}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE (username LIKE '%""%')[0m
+  ↳ app/controllers/users_controller.rb:9
+Completed 200 OK in 2ms (Views: 0.7ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/users/?query=%22%20%22" for ::1 at 2021-07-14 16:57:29 +0200
+Processing by UsersController#index as */*
+  Parameters: {"query"=>"\" \""}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE (username LIKE '%" "%')[0m
+  ↳ app/controllers/users_controller.rb:9
+Completed 200 OK in 1ms (Views: 0.6ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/users/?query=%20" for ::1 at 2021-07-14 16:57:41 +0200
+Processing by UsersController#index as */*
+  Parameters: {"query"=>" "}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE (username LIKE '% %')[0m
+  ↳ app/controllers/users_controller.rb:9
+Completed 200 OK in 1ms (Views: 0.7ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/users/?query=" for ::1 at 2021-07-14 16:57:43 +0200
+Processing by UsersController#index as */*
+  Parameters: {"query"=>""}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE (username LIKE '%%')[0m
+  ↳ app/controllers/users_controller.rb:9
+Completed 200 OK in 2ms (Views: 1.0ms | ActiveRecord: 0.3ms)
+
+
