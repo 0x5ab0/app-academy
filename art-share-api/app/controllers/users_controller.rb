@@ -16,12 +16,6 @@ class UsersController < ApplicationController
         render json: User.find(params[:id])
     end
 
-    def destroy
-        user = User.find(params[:id])
-        user.destroy
-        render json: user
-    end
-
     def update
         user = User.find(params[:id])
         if user.update_attributes(user_params)
@@ -31,9 +25,15 @@ class UsersController < ApplicationController
         end
     end
 
+    def destroy
+        user = User.find(params[:id])
+        user.destroy
+        render json: user
+    end
+
     private
 
     def user_params
-        params.require(:user).permit(:name, :email)
+        params.require(:user).permit(:username)
     end
 end

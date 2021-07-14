@@ -1155,3 +1155,112 @@ Migrating to CreateArtworkShares (20210714101758)
   [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
   [1m[36mArtworkShare Update (0.3ms)[0m  [1m[33mUPDATE "artwork_shares" SET "id" = $1, "artwork_id" = $2, "viewer_id" = $3, "updated_at" = $4 WHERE "artwork_shares"."id" = $5[0m  [["id", 2], ["artwork_id", 2], ["viewer_id", 1], ["updated_at", "2021-07-14 10:53:28.523937"], ["id", 3]]
   [1m[35m (1.3ms)[0m  [1m[35mCOMMIT[0m
+Started GET "/users" for ::1 at 2021-07-14 13:02:27 +0200
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/josep/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.6/lib/active_record/log_subscriber.rb:98
+Processing by UsersController#index as */*
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:3
+Completed 200 OK in 12ms (Views: 3.9ms | ActiveRecord: 2.7ms)
+
+
+Started POST "/users?user[username]=Nakamoto" for ::1 at 2021-07-14 13:03:06 +0200
+Processing by UsersController#create as */*
+  Parameters: {"user"=>{"username"=>"Nakamoto"}}
+Unpermitted parameter: :username
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:8
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:8
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/users_controller.rb:8
+Completed 422 Unprocessable Entity in 4ms (Views: 0.1ms | ActiveRecord: 0.5ms)
+
+
+Started POST "/users?username=Nakamoto" for ::1 at 2021-07-14 13:03:15 +0200
+Processing by UsersController#create as */*
+  Parameters: {"username"=>"Nakamoto"}
+Completed 400 Bad Request in 0ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionController::ParameterMissing (param is missing or the value is empty: user):
+  
+app/controllers/users_controller.rb:37:in `user_params'
+app/controllers/users_controller.rb:7:in `create'
+Started POST "/users?user[username]=Nakamoto" for ::1 at 2021-07-14 13:04:02 +0200
+Processing by UsersController#create as */*
+  Parameters: {"user"=>{"username"=>"Nakamoto"}}
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:8
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "Nakamoto"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:8
+  [1m[36mUser Create (0.2ms)[0m  [1m[32mINSERT INTO "users" ("created_at", "updated_at", "username") VALUES ($1, $2, $3) RETURNING "id"[0m  [["created_at", "2021-07-14 11:04:02.370688"], ["updated_at", "2021-07-14 11:04:02.370688"], ["username", "Nakamoto"]]
+  ↳ app/controllers/users_controller.rb:8
+  [1m[35m (2.9ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/users_controller.rb:8
+Completed 200 OK in 13ms (Views: 0.3ms | ActiveRecord: 5.7ms)
+
+
+Started DELETE "/users/9" for ::1 at 2021-07-14 13:04:45 +0200
+Processing by UsersController#destroy as */*
+  Parameters: {"id"=>"9"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:20
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:21
+  [1m[36mArtwork Load (0.2ms)[0m  [1m[34mSELECT "artworks".* FROM "artworks" WHERE "artworks"."artist_id" = $1[0m  [["artist_id", 9]]
+  ↳ app/controllers/users_controller.rb:21
+  [1m[36mArtworkShare Load (0.2ms)[0m  [1m[34mSELECT "artwork_shares".* FROM "artwork_shares" WHERE "artwork_shares"."viewer_id" = $1[0m  [["viewer_id", 9]]
+  ↳ app/controllers/users_controller.rb:21
+  [1m[36mUser Destroy (0.3ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = $1[0m  [["id", 9]]
+  ↳ app/controllers/users_controller.rb:21
+  [1m[35m (1.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/users_controller.rb:21
+Completed 200 OK in 22ms (Views: 0.4ms | ActiveRecord: 4.0ms)
+
+
+Started GET "/users/" for ::1 at 2021-07-14 13:04:49 +0200
+Processing by UsersController#index as */*
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:3
+Completed 200 OK in 1ms (Views: 0.8ms | ActiveRecord: 0.2ms)
+
+
+Started PATCH "/users/1?user[username]=Nakamoto" for ::1 at 2021-07-14 13:27:31 +0200
+  
+SyntaxError (/home/josep/app-academy/art-share-api/app/controllers/users_controller.rb:39: syntax error, unexpected end-of-input, expecting keyword_end):
+  
+app/controllers/users_controller.rb:39: syntax error, unexpected end-of-input, expecting keyword_end
+Started PATCH "/users/1?user[username]=Nakamoto" for ::1 at 2021-07-14 13:27:39 +0200
+Processing by UsersController#update as */*
+  Parameters: {"user"=>{"username"=>"Nakamoto"}, "id"=>"1"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:26
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:27
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["username", "Nakamoto"], ["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:27
+  [1m[36mUser Update (0.2ms)[0m  [1m[33mUPDATE "users" SET "username" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["username", "Nakamoto"], ["updated_at", "2021-07-14 11:27:39.697577"], ["id", 1]]
+  ↳ app/controllers/users_controller.rb:27
+  [1m[35m (1.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/users_controller.rb:27
+Completed 200 OK in 15ms (Views: 0.3ms | ActiveRecord: 5.8ms)
+
+
+Started PATCH "/users/1?user[username]=Satoshi" for ::1 at 2021-07-14 13:27:47 +0200
+Processing by UsersController#update as */*
+  Parameters: {"user"=>{"username"=>"Satoshi"}, "id"=>"1"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:26
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:27
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["username", "Satoshi"], ["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:27
+  [1m[36mUser Update (0.2ms)[0m  [1m[33mUPDATE "users" SET "username" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["username", "Satoshi"], ["updated_at", "2021-07-14 11:27:47.915006"], ["id", 1]]
+  ↳ app/controllers/users_controller.rb:27
+  [1m[35m (1.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/users_controller.rb:27
+Completed 200 OK in 7ms (Views: 0.4ms | ActiveRecord: 2.6ms)
+
+
