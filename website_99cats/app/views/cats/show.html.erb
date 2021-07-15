@@ -1,0 +1,12 @@
+<h1><%= @cat.name %></h1>
+
+<ul>
+    <li><strong>Birth date:</strong> <%= @cat.birth_date %> (<%= @cat.age %> old) </li>
+    <li><strong>Color:</strong> <%= @cat.color %></li>
+    <li><strong>Sex:</strong> <%= @cat.sex == 'M' ? 'Male' : 'Female' %></li>
+    <% if @cat.description %>
+        <li><strong>Description:</strong> <%= @cat.description %></li>
+    <% end %>
+</ul>
+
+<a href="<%= cats_url %>">Back to all the cats in the world.</a>

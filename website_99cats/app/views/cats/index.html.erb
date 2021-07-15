@@ -1,0 +1,7 @@
+<h1>All of the cats in the world!</h1>
+
+<ul>
+    <% @cats.each do |cat| %>
+        <li> <a href="<%= cat_url(cat) %>"><%=cat[:name]%>, the <%=cat[:color].downcase%> cat.</a></li>
+    <% end %>
+</ul>
