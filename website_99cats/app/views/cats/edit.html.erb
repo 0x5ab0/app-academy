@@ -1,0 +1,4 @@
+<% cat_title = @cat.sex == "M" ? "Mr." : "Ms." %>
+<h1>Edit <%= cat_title %> <%= @cat.name %></h1>
+
+<%= render 'form', cat: @cat %>

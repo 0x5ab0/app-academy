@@ -1,3 +1,6 @@
+<% cat_title = @cat.sex == "M" ? "Mr." : "Ms." %>
+<h1><%= cat_title %> <%= @cat.name %></h1>
+
 <table>
     <thead>
         <tr>
@@ -27,4 +30,6 @@
     <p> <strong>Description:</strong> <%= @cat.description %> </p>
 <% end %>
 
-<a href="<%= cats_url %>">Back to all the cats in the world.</a>
+<a href=<%= edit_cat_url(@cat) %>>Edit</a>
+<br>
+<a href="<%= cats_url %>">Back</a>

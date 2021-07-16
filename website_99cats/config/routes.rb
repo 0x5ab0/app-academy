@@ -1,3 +1,3 @@
 Rails.application.routes.draw do
-  resources :cats, only: [:index, :show]
+  resources :cats, except: [:destroy]
 end
