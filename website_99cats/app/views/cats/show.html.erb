@@ -1,12 +1,30 @@
-<h1><%= @cat.name %></h1>
+<table>
+    <thead>
+        <tr>
+            <th colspan="2"> <%= @cat.name %></thead> </th>
+        </tr>
+    <tbody>
+        <tr>
+            <td> <strong>Birth date:</strong> </td>
+            <td> <%= @cat.birth_date %> </td>
+        </tr>
+        <tr>
+            <td> <strong>Age:</strong> </td>
+            <td> <%= @cat.age %> old </td>
+        </tr>
+        <tr>
+            <td> <strong>Color:</strong> </td>
+            <td> <%= @cat.color %> </td>
+        </tr>
+        <tr>
+            <td> <strong>Sex:</strong> </td>
+            <td> <%= @cat.sex == 'M' ? 'Male' : 'Female' %> </td>
+        </tr>
+    </tbody>
+</table>
 
-<ul>
-    <li><strong>Birth date:</strong> <%= @cat.birth_date %> (<%= @cat.age %> old) </li>
-    <li><strong>Color:</strong> <%= @cat.color %></li>
-    <li><strong>Sex:</strong> <%= @cat.sex == 'M' ? 'Male' : 'Female' %></li>
-    <% if @cat.description %>
-        <li><strong>Description:</strong> <%= @cat.description %></li>
-    <% end %>
-</ul>
+<% if @cat.description %>
+    <p> <strong>Description:</strong> <%= @cat.description %> </p>
+<% end %>
 
 <a href="<%= cats_url %>">Back to all the cats in the world.</a>
