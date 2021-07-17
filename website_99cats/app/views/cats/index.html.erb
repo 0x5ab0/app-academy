@@ -2,8 +2,11 @@
 
 <ul>
     <% @cats.each do |cat| %>
-        <li> <a href="<%= cat_url(cat) %>"><strong><%=cat[:name]%></strong>, the <%=cat[:color].downcase%> cat.</a></li>
+        <li> <a href="<%= cat_url(cat) %>"><strong><%=cat[:name]%></strong></a>, the <%=cat[:color].downcase%> cat.</li>
     <% end %>
 </ul>
 
-<a href=<%= new_cat_url %>>Add a new cat to the family!</a>
+Add a new cat to the family! <a href=<%= new_cat_url %>>➤</a>
+<br>
+Make a new rental request! <a href="<%= new_cat_rental_request_url(@cat) %>">➤</a>
+
