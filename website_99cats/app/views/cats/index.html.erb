@@ -1,12 +1,9 @@
-<h1>All of the cats in the world!</h1>
+<h1>Cats upon cats!</h1>
 
 <ul>
-    <% @cats.each do |cat| %>
-        <li> <a href="<%= cat_url(cat) %>"><strong><%=cat[:name]%></strong></a>, the <%=cat[:color].downcase%> cat.</li>
-    <% end %>
+  <% @cats.each do |cat| %>
+    <li><a href="<%= cat_url(cat) %>"><%= cat.name %></a></li>
+  <% end %>
 </ul>
 
-Add a new cat to the family! <a href=<%= new_cat_url %>>➤</a>
-<br>
-Make a new rental request! <a href="<%= new_cat_rental_request_url(@cat) %>">➤</a>
-
+<a href="<%= new_cat_url %>">Create cat</a>
