@@ -1,15 +1,20 @@
 class CatRentalRequest < ApplicationRecord
-  # .freeze renders constants immutable
+
+  # freeze renders constants immutable
   STATUS_STATES = %w(APPROVED DENIED PENDING).freeze
 
-  validates :cat_id, :end_date, :start_date, :status, presence: true
+  after_initialize :assign_pending_status
+
+  # N.B. Remember, Rails 5 automatically validates the presence of
+  # belongs_to associations, so we can leave the validation of cat and
+  # user out here.
+  validates :end_date, :start_date, :status, presence: true
   validates :status, inclusion: STATUS_STATES
   validate :start_must_come_before_end
   validate :does_not_overlap_approved_request
 
   belongs_to :cat
-
-  after_initialize :assign_pending_status
+  belongs_to :user
 
   def approve!
     raise 'not pending' unless self.status == 'PENDING'
@@ -147,8 +152,8 @@ class CatRentalRequest < ApplicationRecord
   end
 
   def start_must_come_before_end
-    return if start_date < end_date
-    errors[:start_date] << 'must come before end date'
-    errors[:end_date] << 'must come after start date'
+    errors[:start_date] << 'must specify a start date' unless start_date
+    errors[:end_date] << 'must specify an end date' unless end_date
+    errors[:start_date] << 'must come before end date' if start_date > end_date
   end
 end
