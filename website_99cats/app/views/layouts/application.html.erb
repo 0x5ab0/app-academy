@@ -9,6 +9,22 @@
   </head>
 
   <body>
-    <%= yield %>
+    <% if current_user.nil? %>
+      <a href="<%= new_session_url %>">Sign in</a>
+      <a href="<%= new_user_url %>">Sign up</a>
+    <% else %>
+      <%= current_user.username %>
+      <form action="<%= session_url %>" method="post">
+        <input
+          type="hidden"
+          name="authenticity_token"
+          value="<%= form_authenticity_token %>">
+        <input type="hidden" name="_method" value="delete">
+        <input type="submit" value="Logout">
+      </form>
+    <% end %>
+    <main>
+      <%= yield %>
+    </main>
   </body>
 </html>
