@@ -2783,3 +2783,200 @@ Processing by CatsController#index as HTML
 Completed 200 OK in 14ms (Views: 12.8ms | ActiveRecord: 0.5ms)
 
 
+Started GET "/" for ::1 at 2021-07-21 18:30:10 +0200
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/cats" for ::1 at 2021-07-21 18:30:10 +0200
+Processing by CatsController#index as HTML
+  Rendering cats/index.html.erb within layouts/application
+  [1m[36mCat Load (0.4ms)[0m  [1m[34mSELECT "cats".* FROM "cats"[0m
+  Rendered cats/index.html.erb within layouts/application (13.9ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "C8VUfGxpsUuLsuybANQbtA"], ["LIMIT", 1]]
+Completed 200 OK in 181ms (Views: 172.1ms | ActiveRecord: 4.8ms)
+
+
+Started DELETE "/session" for ::1 at 2021-07-21 18:30:16 +0200
+Processing by SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"UidOGYen5d1xwNBn75zvGK48vzuZZsQXN5abYPn6rHHOZqygWfx6Tfr2eWbLruCkKpt40b409LLS3ygFh5oGBA=="}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "C8VUfGxpsUuLsuybANQbtA"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["username", "Josep"], ["id", 11], ["LIMIT", 1]]
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["session_token", "ZVyM-HfqPetNn9NRUmBbDQ"], ["id", 11], ["LIMIT", 1]]
+  [1m[36mUser Update (0.3ms)[0m  [1m[33mUPDATE "users" SET "session_token" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["session_token", "ZVyM-HfqPetNn9NRUmBbDQ"], ["updated_at", "2021-07-21 16:30:16.973498"], ["id", 11]]
+  [1m[35m (2.8ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/session/new
+Completed 302 Found in 9ms (ActiveRecord: 4.1ms)
+
+
+Started GET "/session/new" for ::1 at 2021-07-21 18:30:16 +0200
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered shared/_errors.html.erb (0.2ms)
+  Rendered sessions/new.html.erb within layouts/application (0.9ms)
+Completed 200 OK in 11ms (Views: 10.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/new" for ::1 at 2021-07-21 18:30:19 +0200
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered shared/_errors.html.erb (0.2ms)
+  Rendered users/new.html.erb within layouts/application (1.4ms)
+Completed 200 OK in 14ms (Views: 13.3ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users" for ::1 at 2021-07-21 18:30:26 +0200
+Processing by UsersController#create as HTML
+  Parameters: {"authenticity_token"=>"l2QW4kiM1wq8T7LOCP14u0rq9O6BTXvVU0056yhNCj4LJfRbltdImjd5G88sz3cHzk0zBKYfS3C2BIqOVi2gSw==", "user"=>{"username"=>"Pepito", "password"=>"[FILTERED]"}}
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "Pepito"], ["LIMIT", 1]]
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "rkagA3vbVzcoI8V4oTqMhQ"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.2ms)[0m  [1m[32mINSERT INTO "users" ("password_digest", "session_token", "username", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["password_digest", "$2a$12$38Xa5vPjlWm3yZ4wtE3vNekEaS.S66Q7CSbufUH.GXUGg/ElRHelG"], ["session_token", "rkagA3vbVzcoI8V4oTqMhQ"], ["username", "Pepito"], ["created_at", "2021-07-21 16:30:26.595883"], ["updated_at", "2021-07-21 16:30:26.595883"]]
+  [1m[35m (3.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["username", "Pepito"], ["id", 12], ["LIMIT", 1]]
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["session_token", "0fk8i4xbo5-HhZU3EMoAJQ"], ["id", 12], ["LIMIT", 1]]
+  [1m[36mUser Update (0.2ms)[0m  [1m[33mUPDATE "users" SET "session_token" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["session_token", "0fk8i4xbo5-HhZU3EMoAJQ"], ["updated_at", "2021-07-21 16:30:26.601453"], ["id", 12]]
+  [1m[35m (1.1ms)[0m  [1m[35mCOMMIT[0m
+UserMailer#welcome_mail: processed outbound mail in 4.0ms
+Completed 500 Internal Server Error in 304ms (ActiveRecord: 5.5ms)
+
+
+
+ActionView::MissingTemplate - Missing template user_mailer/welcome_mail with "mailer". Searched in:
+  * "user_mailer":
+  app/mailers/user_mailer.rb:7:in `welcome_mail'
+  app/controllers/users_controller.rb:9:in `create'
+
+Started POST "/__better_errors/8a7994e5392ffc90/variables" for ::1 at 2021-07-21 18:30:26 +0200
+Started POST "/__better_errors/8a7994e5392ffc90/eval" for ::1 at 2021-07-21 18:30:40 +0200
+Started POST "/__better_errors/8a7994e5392ffc90/eval" for ::1 at 2021-07-21 18:30:48 +0200
+Started POST "/users" for ::1 at 2021-07-21 18:32:54 +0200
+Processing by UsersController#create as HTML
+  Parameters: {"authenticity_token"=>"l2QW4kiM1wq8T7LOCP14u0rq9O6BTXvVU0056yhNCj4LJfRbltdImjd5G88sz3cHzk0zBKYfS3C2BIqOVi2gSw==", "user"=>{"username"=>"Pepito", "password"=>"[FILTERED]"}}
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "Pepito"], ["LIMIT", 1]]
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "jkL526RoJ3fjcJTsfhRrBg"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  Rendering users/new.html.erb within layouts/application
+  Rendered shared/_errors.html.erb (0.2ms)
+  Rendered users/new.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 1002ms (Views: 10.5ms | ActiveRecord: 3.1ms)
+
+
+Started POST "/users" for ::1 at 2021-07-21 18:33:03 +0200
+Processing by UsersController#create as HTML
+  Parameters: {"authenticity_token"=>"38XTuioRsHr0whRA4WQav2EGfkL02M7MHCSqX21QIPBDhDED9Eov6n/0vUHFVhUD5aG5qNOK/mn5bRk6EzCKhQ==", "user"=>{"username"=>"Pepito2", "password"=>"[FILTERED]"}}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "Pepito2"], ["LIMIT", 1]]
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "mYtyviguk05wQVoPfhAg0A"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.2ms)[0m  [1m[32mINSERT INTO "users" ("password_digest", "session_token", "username", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["password_digest", "$2a$12$58hmRUM0TVBIu5vNn6pgPOCq1SWxeiNvmhXMb.0YsHajuS86UYYe2"], ["session_token", "mYtyviguk05wQVoPfhAg0A"], ["username", "Pepito2"], ["created_at", "2021-07-21 16:33:03.800939"], ["updated_at", "2021-07-21 16:33:03.800939"]]
+  [1m[35m (2.9ms)[0m  [1m[35mCOMMIT[0m
+UserMailer#welcome_mail: processed outbound mail in 3.0ms
+Completed 500 Internal Server Error in 200ms (ActiveRecord: 3.8ms)
+
+
+
+ActionView::MissingTemplate - Missing template user_mailer/welcome_mail with "mailer". Searched in:
+  * "user_mailer":
+  app/mailers/user_mailer.rb:7:in `welcome_mail'
+  app/controllers/users_controller.rb:9:in `create'
+
+Started POST "/__better_errors/06ef461407ef565e/variables" for ::1 at 2021-07-21 18:33:03 +0200
+Started POST "/users" for ::1 at 2021-07-21 18:33:32 +0200
+Processing by UsersController#create as HTML
+  Parameters: {"authenticity_token"=>"38XTuioRsHr0whRA4WQav2EGfkL02M7MHCSqX21QIPBDhDED9Eov6n/0vUHFVhUD5aG5qNOK/mn5bRk6EzCKhQ==", "user"=>{"username"=>"Pepito2", "password"=>"[FILTERED]"}}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "Pepito2"], ["LIMIT", 1]]
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "pXr1w6DgBeHVwq29Fsucyg"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  Rendering users/new.html.erb within layouts/application
+  Rendered shared/_errors.html.erb (0.2ms)
+  Rendered users/new.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 199ms (Views: 10.0ms | ActiveRecord: 0.8ms)
+
+
+Started POST "/users" for ::1 at 2021-07-21 18:33:40 +0200
+Processing by UsersController#create as HTML
+  Parameters: {"authenticity_token"=>"1u9K9CsVZe68nYb95mJmmVKxKzaiE8lg3YCnX5WMl3tKrqhN9U76fjerL/zCUGkl1hbs3IVB+cU4yRQ66+w9Dg==", "user"=>{"username"=>"pinocho", "password"=>"[FILTERED]"}}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "pinocho"], ["LIMIT", 1]]
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "oF4F9xRvCXfUZz5cYSLOcQ"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.2ms)[0m  [1m[32mINSERT INTO "users" ("password_digest", "session_token", "username", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["password_digest", "$2a$12$ZhkUON1Ah8TVIXirEiGbsev36RUgs5U2YRPlp0MxQwKNVpmHbILdS"], ["session_token", "oF4F9xRvCXfUZz5cYSLOcQ"], ["username", "pinocho"], ["created_at", "2021-07-21 16:33:41.178357"], ["updated_at", "2021-07-21 16:33:41.178357"]]
+  [1m[35m (2.9ms)[0m  [1m[35mCOMMIT[0m
+  Rendering user_mailer/welcome_mail.html.erb within layouts/mailer
+  Rendered user_mailer/welcome_mail.html.erb within layouts/mailer (0.3ms)
+  Rendering user_mailer/welcome_mail.text.erb within layouts/mailer
+  Rendered user_mailer/welcome_mail.text.erb within layouts/mailer (0.2ms)
+UserMailer#welcome_mail: processed outbound mail in 8.8ms
+Sent mail to pinocho (226.7ms)
+Date: Wed, 21 Jul 2021 18:33:41 +0200
+From: ninetyninecatsadmin@example.com
+To: pinocho
+Message-ID: <60f84c652ef8d_1d102b173b15e83432613@DESKTOP-7S52PHS.mail>
+Subject: Welcome to 99 Cats!
+Mime-Version: 1.0
+Content-Type: multipart/alternative;
+ boundary="--==_mimepart_60f84c652e147_1d102b173b15e8343258a";
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+
+----==_mimepart_60f84c652e147_1d102b173b15e8343258a
+Content-Type: text/plain;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+Welcome to 99 Cats!, pinocho
+  
+  You have successfully signed up to 99 Cats,
+  your username is: pinocho.
+  Please login http://localhost:3000/session/new
+  
+Thanks for joining and have a great day!
+
+
+----==_mimepart_60f84c652e147_1d102b173b15e8343258a
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <style>
+      /* Email styles need to be inline */
+    </style>
+  </head>
+
+  <body>
+    <html>
+  <head>
+    <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
+  </head>
+  <body>
+    <h1>Welcome to 99 Cats!, pinocho</h1>
+    <p>
+      You have successfully signed up to 99 Cats,
+      your username is: pinocho.<br />
+      Please login <a href=http://localhost:3000/session/new>Here</a>
+    </p>
+    <p>Thanks for joining and have a great day!</p>
+  </body>
+</html>
+  </body>
+</html>
+
+----==_mimepart_60f84c652e147_1d102b173b15e8343258a--
+
+Redirected to http://localhost:3000/cats
+Completed 302 Found in 427ms (ActiveRecord: 3.7ms)
+
+
+Started GET "/cats" for ::1 at 2021-07-21 18:33:41 +0200
+Processing by CatsController#index as HTML
+  Rendering cats/index.html.erb within layouts/application
+  [1m[36mCat Load (0.3ms)[0m  [1m[34mSELECT "cats".* FROM "cats"[0m
+  Rendered cats/index.html.erb within layouts/application (7.4ms)
+Completed 200 OK in 19ms (Views: 16.0ms | ActiveRecord: 1.9ms)
+
+
