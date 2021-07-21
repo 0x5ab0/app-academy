@@ -2638,3 +2638,148 @@ Completed 200 OK in 953ms (Views: 946.5ms | ActiveRecord: 5.9ms)
   [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
   [1m[36mCatRentalRequest Create (0.2ms)[0m  [1m[32mINSERT INTO "cat_rental_requests" ("cat_id", "end_date", "start_date", "status", "created_at", "updated_at", "user_id") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["cat_id", 10], ["end_date", "2020-01-28"], ["start_date", "2020-01-01"], ["status", "APPROVED"], ["created_at", "2021-07-21 15:50:27.429345"], ["updated_at", "2021-07-21 15:50:27.429345"], ["user_id", 10]]
   [1m[35m (1.1ms)[0m  [1m[35mCOMMIT[0m
+Started GET "/" for ::1 at 2021-07-21 18:14:43 +0200
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/cats" for ::1 at 2021-07-21 18:14:43 +0200
+Processing by CatsController#index as HTML
+  Rendering cats/index.html.erb within layouts/application
+  [1m[36mCat Load (0.4ms)[0m  [1m[34mSELECT "cats".* FROM "cats"[0m
+  Rendered cats/index.html.erb within layouts/application (11.9ms)
+Completed 200 OK in 163ms (Views: 154.7ms | ActiveRecord: 2.4ms)
+
+
+Started GET "/cats/1" for ::1 at 2021-07-21 18:14:48 +0200
+Processing by CatsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mCat Load (0.4ms)[0m  [1m[34mSELECT  "cats".* FROM "cats" WHERE "cats"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering cats/show.html.erb within layouts/application
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCatRentalRequest Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "cat_rental_requests" WHERE "cat_rental_requests"."cat_id" = $1 LIMIT $2[0m  [["cat_id", 1], ["LIMIT", 1]]
+  [1m[36mCatRentalRequest Load (0.3ms)[0m  [1m[34mSELECT "cat_rental_requests".* FROM "cat_rental_requests" WHERE "cat_rental_requests"."cat_id" = $1 ORDER BY start_date[0m  [["cat_id", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered cats/_req_tr.html.erb (2.1ms)
+  Rendered cats/show.html.erb within layouts/application (895.4ms)
+Completed 200 OK in 916ms (Views: 907.5ms | ActiveRecord: 6.0ms)
+
+
+Started GET "/session/new" for ::1 at 2021-07-21 18:14:56 +0200
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered shared/_errors.html.erb (0.4ms)
+  Rendered sessions/new.html.erb within layouts/application (1.6ms)
+Completed 200 OK in 13ms (Views: 12.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/new" for ::1 at 2021-07-21 18:14:58 +0200
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered shared/_errors.html.erb (0.3ms)
+  Rendered users/new.html.erb within layouts/application (1.3ms)
+Completed 200 OK in 12ms (Views: 11.3ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users" for ::1 at 2021-07-21 18:15:05 +0200
+Processing by UsersController#create as HTML
+  Parameters: {"authenticity_token"=>"d3HHVoQuGy+NxH8fvLpXiITnn6HtjWhSmTclN6kPSXDrMCXvWnWEvwby1h6YiFg0AEBYS8rfWPd8fpZS12/jBQ==", "user"=>{"username"=>"Josep", "password"=>"[FILTERED]"}}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "Josep"], ["LIMIT", 1]]
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "EWfKY-weaO3Z0nc55dyXxA"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  Rendering users/new.html.erb within layouts/application
+  Rendered shared/_errors.html.erb (0.2ms)
+  Rendered users/new.html.erb within layouts/application (0.9ms)
+Completed 200 OK in 201ms (Views: 10.2ms | ActiveRecord: 0.9ms)
+
+
+Started POST "/users" for ::1 at 2021-07-21 18:16:07 +0200
+Processing by UsersController#create as HTML
+  Parameters: {"authenticity_token"=>"Wskrot2z7ODELQtBbOAp5MSS2mqfxL0qbW2tXxhs0MXGiMkbA+hzcE8bokBI0iZYQDUdgLiWjY+IJB46Zgx6sA==", "user"=>{"username"=>"Josep", "password"=>"[FILTERED]"}}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "Josep"], ["LIMIT", 1]]
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "GYlm96-EW4Z85IhOAWNWOQ"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.2ms)[0m  [1m[32mINSERT INTO "users" ("password_digest", "session_token", "username", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["password_digest", "$2a$12$jEwxf6kN2A6skEAwOOVAeOeSjAAVkH8iZN76lN8f3V1L/9s1YuPXu"], ["session_token", "GYlm96-EW4Z85IhOAWNWOQ"], ["username", "Josep"], ["created_at", "2021-07-21 16:16:08.057445"], ["updated_at", "2021-07-21 16:16:08.057445"]]
+  [1m[35m (1.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["username", "Josep"], ["id", 11], ["LIMIT", 1]]
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["session_token", "C8VUfGxpsUuLsuybANQbtA"], ["id", 11], ["LIMIT", 1]]
+  [1m[36mUser Update (0.2ms)[0m  [1m[33mUPDATE "users" SET "session_token" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["session_token", "C8VUfGxpsUuLsuybANQbtA"], ["updated_at", "2021-07-21 16:16:08.061631"], ["id", 11]]
+  [1m[35m (1.1ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/cats
+Completed 302 Found in 196ms (ActiveRecord: 3.9ms)
+
+
+Started GET "/cats" for ::1 at 2021-07-21 18:16:08 +0200
+Processing by CatsController#index as HTML
+  Rendering cats/index.html.erb within layouts/application
+  [1m[36mCat Load (0.2ms)[0m  [1m[34mSELECT "cats".* FROM "cats"[0m
+  Rendered cats/index.html.erb within layouts/application (1.3ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "C8VUfGxpsUuLsuybANQbtA"], ["LIMIT", 1]]
+Completed 200 OK in 12ms (Views: 11.6ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/cats/8" for ::1 at 2021-07-21 18:16:11 +0200
+Processing by CatsController#show as HTML
+  Parameters: {"id"=>"8"}
+  [1m[36mCat Load (0.4ms)[0m  [1m[34mSELECT  "cats".* FROM "cats" WHERE "cats"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  Rendering cats/show.html.erb within layouts/application
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "C8VUfGxpsUuLsuybANQbtA"], ["LIMIT", 1]]
+  [1m[36mCatRentalRequest Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "cat_rental_requests" WHERE "cat_rental_requests"."cat_id" = $1 LIMIT $2[0m  [["cat_id", 8], ["LIMIT", 1]]
+  [1m[36mCatRentalRequest Load (0.2ms)[0m  [1m[34mSELECT "cat_rental_requests".* FROM "cat_rental_requests" WHERE "cat_rental_requests"."cat_id" = $1 ORDER BY start_date[0m  [["cat_id", 8]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  Rendered cats/_req_tr.html.erb (0.9ms)
+  Rendered cats/show.html.erb within layouts/application (5.7ms)
+Completed 200 OK in 17ms (Views: 14.9ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/cat_rental_requests/new?cat_id=8" for ::1 at 2021-07-21 18:16:15 +0200
+Processing by CatRentalRequestsController#new as HTML
+  Parameters: {"cat_id"=>"8"}
+  Rendering cat_rental_requests/new.html.erb within layouts/application
+  Rendered shared/_errors.html.erb (0.4ms)
+  [1m[36mCat Load (0.3ms)[0m  [1m[34mSELECT "cats".* FROM "cats"[0m
+  Rendered cat_rental_requests/new.html.erb within layouts/application (2.2ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "C8VUfGxpsUuLsuybANQbtA"], ["LIMIT", 1]]
+Completed 200 OK in 14ms (Views: 12.5ms | ActiveRecord: 0.5ms)
+
+
+Started POST "/cat_rental_requests" for ::1 at 2021-07-21 18:16:20 +0200
+Processing by CatRentalRequestsController#create as HTML
+  Parameters: {"authenticity_token"=>"zCaPWXLsJTC8U6U5lUTJxbpd66QLz13YNWEWK+HiyVFQZ23grLe6oDdlDDixdsZ5PvosTiydbX3QKKVOn4JjJA==", "cat_rental_request"=>{"cat_id"=>"8", "start_date"=>"2021-07-20", "end_date"=>"2021-07-30"}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "C8VUfGxpsUuLsuybANQbtA"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCatRentalRequest Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "cat_rental_requests" WHERE "cat_rental_requests"."id" IS NOT NULL AND "cat_rental_requests"."cat_id" = $1 AND NOT (start_date > '2021-07-30' OR end_date < '2021-07-20') AND (status = 'APPROVED') LIMIT $2[0m  [["cat_id", 8], ["LIMIT", 1]]
+  [1m[36mCat Load (0.2ms)[0m  [1m[34mSELECT  "cats".* FROM "cats" WHERE "cats"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+  [1m[36mCatRentalRequest Create (0.3ms)[0m  [1m[32mINSERT INTO "cat_rental_requests" ("cat_id", "end_date", "start_date", "status", "created_at", "updated_at", "user_id") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["cat_id", 8], ["end_date", "2021-07-30"], ["start_date", "2021-07-20"], ["status", "PENDING"], ["created_at", "2021-07-21 16:16:20.832194"], ["updated_at", "2021-07-21 16:16:20.832194"], ["user_id", 11]]
+  [1m[35m (2.9ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/cats/8
+Completed 302 Found in 8ms (ActiveRecord: 4.2ms)
+
+
+Started GET "/cats/8" for ::1 at 2021-07-21 18:16:20 +0200
+Processing by CatsController#show as HTML
+  Parameters: {"id"=>"8"}
+  [1m[36mCat Load (0.3ms)[0m  [1m[34mSELECT  "cats".* FROM "cats" WHERE "cats"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  Rendering cats/show.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "C8VUfGxpsUuLsuybANQbtA"], ["LIMIT", 1]]
+  [1m[36mCatRentalRequest Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "cat_rental_requests" WHERE "cat_rental_requests"."cat_id" = $1 LIMIT $2[0m  [["cat_id", 8], ["LIMIT", 1]]
+  [1m[36mCatRentalRequest Load (0.2ms)[0m  [1m[34mSELECT "cat_rental_requests".* FROM "cat_rental_requests" WHERE "cat_rental_requests"."cat_id" = $1 ORDER BY start_date[0m  [["cat_id", 8]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  Rendered cats/_req_tr.html.erb (0.8ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+  Rendered cats/_req_tr.html.erb (0.9ms)
+  Rendered cats/show.html.erb within layouts/application (6.2ms)
+Completed 200 OK in 18ms (Views: 15.7ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/cats" for ::1 at 2021-07-21 18:16:31 +0200
+Processing by CatsController#index as HTML
+  Rendering cats/index.html.erb within layouts/application
+  [1m[36mCat Load (0.3ms)[0m  [1m[34mSELECT "cats".* FROM "cats"[0m
+  Rendered cats/index.html.erb within layouts/application (2.3ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "C8VUfGxpsUuLsuybANQbtA"], ["LIMIT", 1]]
+Completed 200 OK in 14ms (Views: 12.8ms | ActiveRecord: 0.5ms)
+
+
