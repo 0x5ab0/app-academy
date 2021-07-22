@@ -1,6 +1,14 @@
 <h1 class='page-header'><%= @track.name %></h1>
 
-<p><%= @track.lyrics %></p>
+<p><%= ugly_lyrics(@track.lyrics) %></p>
+
+<%= render "notes/form", track: @track %>
+
+<h4 class='sub-header'>Notes</h4>
+
+<% @track.notes.each do |note| %>
+  <%= render "notes/note", note: note %>
+<% end %>
 
 <h4 class='sub-header'>Links</h4>
 <ul class='page-links'>

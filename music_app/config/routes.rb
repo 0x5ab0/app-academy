@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  root to: redirect('/bands')
+  
   resource :session, only: [:new, :create, :destroy]
 
   resources :users, only: [:show, :new, :create]
@@ -12,4 +14,6 @@ Rails.application.routes.draw do
   end
 
   resources :tracks, only: [:show, :create, :edit, :update, :destroy]
+
+  resources :notes, only: [:create, :destroy]
 end
