@@ -1,11 +1,18 @@
 <h1 class='page-header'><%= @album.name %></h1>
 
-<p> --- SITE IN CONSTRUCTION ---</p>
-<p> --- Tracks from <%= @album.name %> will be added soon. ---</p>
+<% if @album.tracks.length > 0 %>
+<ul class='main-list'>
+    <% @album.tracks.each do |track| %>
+        <li><a href="<%= track_url(track) %>"><p><%= track.name %></p></a></li>
+    <% end %>
+</ul>
+<% else %>
+    <p>This album has no tracks... yet!</p>
+<% end %>
 
 <h4 class='sub-header'>Links</h4>
 <ul class='page-links'>
-    <li><a href='#'>IN CONSTRUCTION: New track</a></li>
+    <li><a class='button' href='<%= new_album_track_url(@album) %>'>New Track</a></li>
     <li><a class='button' href='<%= edit_album_url(@album) %>'>Edit Album</a></li>
     <li>
         <form action='<%= album_url(@album) %>' method='POST'>
