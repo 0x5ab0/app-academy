@@ -89,3 +89,907 @@ Processing by Rails::WelcomeController#index as HTML
 Completed 200 OK in 3ms (Views: 1.8ms | ActiveRecord: 0.0ms)
 
 
+Started GET "/" for ::1 at 2021-07-22 11:29:21 +0200
+  
+PG::ConnectionBad (could not connect to server: No such file or directory
+	Is the server running locally and accepting
+	connections on Unix domain socket "/var/run/postgresql/.s.PGSQL.5432"?
+):
+  
+pg (1.2.3) lib/pg.rb:58:in `initialize'
+pg (1.2.3) lib/pg.rb:58:in `new'
+pg (1.2.3) lib/pg.rb:58:in `connect'
+activerecord (5.2.6) lib/active_record/connection_adapters/postgresql_adapter.rb:692:in `connect'
+activerecord (5.2.6) lib/active_record/connection_adapters/postgresql_adapter.rb:223:in `initialize'
+activerecord (5.2.6) lib/active_record/connection_adapters/postgresql_adapter.rb:48:in `new'
+activerecord (5.2.6) lib/active_record/connection_adapters/postgresql_adapter.rb:48:in `postgresql_connection'
+activerecord (5.2.6) lib/active_record/connection_adapters/abstract/connection_pool.rb:830:in `new_connection'
+activerecord (5.2.6) lib/active_record/connection_adapters/abstract/connection_pool.rb:874:in `checkout_new_connection'
+activerecord (5.2.6) lib/active_record/connection_adapters/abstract/connection_pool.rb:853:in `try_to_checkout_new_connection'
+activerecord (5.2.6) lib/active_record/connection_adapters/abstract/connection_pool.rb:814:in `acquire_connection'
+activerecord (5.2.6) lib/active_record/connection_adapters/abstract/connection_pool.rb:538:in `checkout'
+activerecord (5.2.6) lib/active_record/connection_adapters/abstract/connection_pool.rb:382:in `connection'
+activerecord (5.2.6) lib/active_record/connection_adapters/abstract/connection_pool.rb:1033:in `retrieve_connection'
+activerecord (5.2.6) lib/active_record/connection_handling.rb:118:in `retrieve_connection'
+activerecord (5.2.6) lib/active_record/connection_handling.rb:90:in `connection'
+activerecord (5.2.6) lib/active_record/migration.rb:554:in `call'
+actionpack (5.2.6) lib/action_dispatch/middleware/callbacks.rb:28:in `block in call'
+activesupport (5.2.6) lib/active_support/callbacks.rb:98:in `run_callbacks'
+actionpack (5.2.6) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (5.2.6) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.6) lib/action_dispatch/middleware/debug_exceptions.rb:61:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.6) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.6) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.6) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.6) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.6) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.6) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.6) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.2) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.6) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.6) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3) lib/rack/method_override.rb:24:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.6) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.6) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.6) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+railties (5.2.6) lib/rails/engine.rb:524:in `call'
+puma (3.12.6) lib/puma/configuration.rb:227:in `call'
+puma (3.12.6) lib/puma/server.rb:706:in `handle_request'
+puma (3.12.6) lib/puma/server.rb:476:in `process_client'
+puma (3.12.6) lib/puma/server.rb:334:in `block in run'
+puma (3.12.6) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/users/new" for ::1 at 2021-07-22 11:29:27 +0200
+  
+PG::ConnectionBad (could not connect to server: No such file or directory
+	Is the server running locally and accepting
+	connections on Unix domain socket "/var/run/postgresql/.s.PGSQL.5432"?
+):
+  
+pg (1.2.3) lib/pg.rb:58:in `initialize'
+pg (1.2.3) lib/pg.rb:58:in `new'
+pg (1.2.3) lib/pg.rb:58:in `connect'
+activerecord (5.2.6) lib/active_record/connection_adapters/postgresql_adapter.rb:692:in `connect'
+activerecord (5.2.6) lib/active_record/connection_adapters/postgresql_adapter.rb:223:in `initialize'
+activerecord (5.2.6) lib/active_record/connection_adapters/postgresql_adapter.rb:48:in `new'
+activerecord (5.2.6) lib/active_record/connection_adapters/postgresql_adapter.rb:48:in `postgresql_connection'
+activerecord (5.2.6) lib/active_record/connection_adapters/abstract/connection_pool.rb:830:in `new_connection'
+activerecord (5.2.6) lib/active_record/connection_adapters/abstract/connection_pool.rb:874:in `checkout_new_connection'
+activerecord (5.2.6) lib/active_record/connection_adapters/abstract/connection_pool.rb:853:in `try_to_checkout_new_connection'
+activerecord (5.2.6) lib/active_record/connection_adapters/abstract/connection_pool.rb:814:in `acquire_connection'
+activerecord (5.2.6) lib/active_record/connection_adapters/abstract/connection_pool.rb:538:in `checkout'
+activerecord (5.2.6) lib/active_record/connection_adapters/abstract/connection_pool.rb:382:in `connection'
+activerecord (5.2.6) lib/active_record/connection_adapters/abstract/connection_pool.rb:1033:in `retrieve_connection'
+activerecord (5.2.6) lib/active_record/connection_handling.rb:118:in `retrieve_connection'
+activerecord (5.2.6) lib/active_record/connection_handling.rb:90:in `connection'
+activerecord (5.2.6) lib/active_record/migration.rb:554:in `call'
+actionpack (5.2.6) lib/action_dispatch/middleware/callbacks.rb:28:in `block in call'
+activesupport (5.2.6) lib/active_support/callbacks.rb:98:in `run_callbacks'
+actionpack (5.2.6) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (5.2.6) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.6) lib/action_dispatch/middleware/debug_exceptions.rb:61:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.6) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.6) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.6) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.6) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.6) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.6) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.6) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.2) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.6) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.6) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3) lib/rack/method_override.rb:24:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.6) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.6) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.6) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+railties (5.2.6) lib/rails/engine.rb:524:in `call'
+puma (3.12.6) lib/puma/configuration.rb:227:in `call'
+puma (3.12.6) lib/puma/server.rb:706:in `handle_request'
+puma (3.12.6) lib/puma/server.rb:476:in `process_client'
+puma (3.12.6) lib/puma/server.rb:334:in `block in run'
+puma (3.12.6) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/users/new" for ::1 at 2021-07-22 11:29:58 +0200
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/josep/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.6/lib/active_record/log_subscriber.rb:98
+  
+SyntaxError (/home/josep/app-academy/music_app/app/controllers/users_controller.rb:4: syntax error, unexpected tIDENTIFIER, expecting keyword_end
+        render :json user.email
+                     ^~~~):
+  
+app/controllers/users_controller.rb:4: syntax error, unexpected tIDENTIFIER, expecting keyword_end
+Started GET "/users/new" for ::1 at 2021-07-22 11:30:22 +0200
+  
+SyntaxError (/home/josep/app-academy/music_app/app/controllers/users_controller.rb:12: syntax error, unexpected tIDENTIFIER, expecting keyword_end
+        render :json user.email
+                     ^~~~):
+  
+app/controllers/users_controller.rb:12: syntax error, unexpected tIDENTIFIER, expecting keyword_end
+Started GET "/users/new" for ::1 at 2021-07-22 11:33:32 +0200
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 157ms (Views: 157.2ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users" for ::1 at 2021-07-22 11:33:47 +0200
+Processing by UsersController#create as HTML
+  Parameters: {"authenticity_token"=>"RoMCAHkSEXyKuvpW9JyZbER4pkuiYA58S0bBw8unnZq60ZuwnRpg8kPEG8CgNbTOHa6wql8N3ip/bprbLQ5gtA==", "user"=>{"email"=>"josepcoronado1@gmail.com", "password"=>"[FILTERED]"}}
+Completed 500 Internal Server Error in 206ms (ActiveRecord: 4.6ms)
+
+
+  
+NameError (undefined local variable or method `generate_session_token' for #<User:0x00007f70214d9ed0>):
+  
+app/models/user.rb:37:in `ensure_session_token'
+app/controllers/users_controller.rb:7:in `create'
+Started POST "/users" for ::1 at 2021-07-22 11:34:31 +0200
+Processing by UsersController#create as HTML
+  Parameters: {"authenticity_token"=>"RoMCAHkSEXyKuvpW9JyZbER4pkuiYA58S0bBw8unnZq60ZuwnRpg8kPEG8CgNbTOHa6wql8N3ip/bprbLQ5gtA==", "user"=>{"email"=>"josepcoronado1@gmail.com", "password"=>"[FILTERED]"}}
+Completed 500 Internal Server Error in 201ms (ActiveRecord: 1.7ms)
+
+
+  
+NoMethodError (undefined method `session_token=' for #<Class:0x00007f7020d40430>):
+  
+app/models/user.rb:15:in `generate_session_token'
+app/models/user.rb:37:in `ensure_session_token'
+app/controllers/users_controller.rb:7:in `create'
+Started POST "/users" for ::1 at 2021-07-22 11:37:58 +0200
+Processing by UsersController#create as HTML
+  Parameters: {"authenticity_token"=>"RoMCAHkSEXyKuvpW9JyZbER4pkuiYA58S0bBw8unnZq60ZuwnRpg8kPEG8CgNbTOHa6wql8N3ip/bprbLQ5gtA==", "user"=>{"email"=>"josepcoronado1@gmail.com", "password"=>"[FILTERED]"}}
+Completed 500 Internal Server Error in 205ms (ActiveRecord: 1.7ms)
+
+
+  
+NameError (undefined local variable or method `generate_session_token' for #<User:0x00007f7028b49138>):
+  
+app/models/user.rb:37:in `ensure_session_token'
+app/controllers/users_controller.rb:7:in `create'
+Started GET "/users/new" for ::1 at 2021-07-22 11:38:02 +0200
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 12ms (Views: 11.4ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users" for ::1 at 2021-07-22 11:38:12 +0200
+Processing by UsersController#create as HTML
+  Parameters: {"authenticity_token"=>"1yjC4vPxVt9bHfN807a6M5VuO7wraNzQMoLL10kPmT8reltSF/knUZJjEuqHH5eRzLgtXdYFDIYGqpDPr6ZkEQ==", "user"=>{"email"=>"josepcoronado1@gmail.com", "password"=>"[FILTERED]"}}
+Completed 500 Internal Server Error in 197ms (ActiveRecord: 0.0ms)
+
+
+  
+NameError (undefined local variable or method `generate_session_token' for #<User:0x00007f7034657b50>):
+  
+app/models/user.rb:37:in `ensure_session_token'
+app/controllers/users_controller.rb:7:in `create'
+Started POST "/users" for ::1 at 2021-07-22 11:39:00 +0200
+Processing by UsersController#create as HTML
+  Parameters: {"authenticity_token"=>"1yjC4vPxVt9bHfN807a6M5VuO7wraNzQMoLL10kPmT8reltSF/knUZJjEuqHH5eRzLgtXdYFDIYGqpDPr6ZkEQ==", "user"=>{"email"=>"josepcoronado1@gmail.com", "password"=>"[FILTERED]"}}
+Completed 500 Internal Server Error in 201ms (ActiveRecord: 1.7ms)
+
+
+  
+NoMethodError (undefined method `session_token=' for #<Class:0x00007f7021266478>):
+  
+app/models/user.rb:15:in `generate_session_token'
+app/models/user.rb:37:in `ensure_session_token'
+app/controllers/users_controller.rb:7:in `create'
+Started POST "/users" for ::1 at 2021-07-22 11:40:05 +0200
+Processing by UsersController#create as HTML
+  Parameters: {"authenticity_token"=>"1yjC4vPxVt9bHfN807a6M5VuO7wraNzQMoLL10kPmT8reltSF/knUZJjEuqHH5eRzLgtXdYFDIYGqpDPr6ZkEQ==", "user"=>{"email"=>"josepcoronado1@gmail.com", "password"=>"[FILTERED]"}}
+Completed 500 Internal Server Error in 203ms (ActiveRecord: 0.0ms)
+
+
+  
+NoMethodError (undefined method `session_token=' for #<Class:0x00007f7021266478>):
+  
+app/models/user.rb:15:in `generate_session_token'
+app/models/user.rb:37:in `ensure_session_token'
+app/controllers/users_controller.rb:7:in `create'
+Started GET "/users/new" for ::1 at 2021-07-22 11:40:33 +0200
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/josep/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.6/lib/active_record/log_subscriber.rb:98
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 115ms (Views: 112.0ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users" for ::1 at 2021-07-22 11:40:39 +0200
+Processing by UsersController#create as HTML
+  Parameters: {"authenticity_token"=>"HnMKPeJPXQtExhfKVnS/GsQGvMBGuEKOlrrRVTvBpyviIZONBkcshY249lwC3ZK4ndCqIbvVktiikopN3WhaBQ==", "user"=>{"email"=>"josepcoronado1@gmail.com", "password"=>"[FILTERED]"}}
+Completed 500 Internal Server Error in 201ms (ActiveRecord: 2.1ms)
+
+
+
+NoMethodError - undefined method `session_token=' for #<Class:0x00007fd200069da0>:
+  app/models/user.rb:15:in `generate_session_token'
+  app/models/user.rb:37:in `ensure_session_token'
+  app/controllers/users_controller.rb:7:in `create'
+
+Started POST "/__better_errors/fb7979d1d45f69a9/variables" for ::1 at 2021-07-22 11:40:39 +0200
+Started POST "/__better_errors/fb7979d1d45f69a9/eval" for ::1 at 2021-07-22 11:40:47 +0200
+Started POST "/__better_errors/fb7979d1d45f69a9/eval" for ::1 at 2021-07-22 11:40:58 +0200
+Started POST "/__better_errors/fb7979d1d45f69a9/eval" for ::1 at 2021-07-22 11:41:02 +0200
+Started POST "/__better_errors/fb7979d1d45f69a9/eval" for ::1 at 2021-07-22 11:41:16 +0200
+Started POST "/__better_errors/fb7979d1d45f69a9/eval" for ::1 at 2021-07-22 11:41:21 +0200
+Started POST "/__better_errors/fb7979d1d45f69a9/eval" for ::1 at 2021-07-22 11:41:28 +0200
+  [1m[35m (2.9ms)[0m  [1m[34mSELECT "users"."id" FROM "users"[0m
+  ↳ app/models/user.rb:15
+Started POST "/__better_errors/fb7979d1d45f69a9/eval" for ::1 at 2021-07-22 11:41:33 +0200
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "users"."id" FROM "users"[0m
+  ↳ app/models/user.rb:15
+Started POST "/__better_errors/fb7979d1d45f69a9/eval" for ::1 at 2021-07-22 11:42:00 +0200
+Started GET "/users/new" for ::1 at 2021-07-22 11:42:25 +0200
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 8ms (Views: 7.1ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users" for ::1 at 2021-07-22 11:42:29 +0200
+Processing by UsersController#create as HTML
+  Parameters: {"authenticity_token"=>"IVknPZboFpd3ZiHVcKtKtaHDJYuUsvQ0NrZai/kmRDDdC76NcuBnGb4YwEMkAmcX+BUzamnfJGICngGTH4+5Hg==", "user"=>{"email"=>"test", "password"=>"[FILTERED]"}}
+Completed 500 Internal Server Error in 201ms (ActiveRecord: 2.0ms)
+
+
+
+NoMethodError - undefined method `session_token=' for #<Class:0x00007fd208044958>:
+  app/models/user.rb:15:in `generate_session_token'
+  app/models/user.rb:37:in `ensure_session_token'
+  app/controllers/users_controller.rb:7:in `create'
+
+Started POST "/__better_errors/60db28229dbd3085/variables" for ::1 at 2021-07-22 11:42:29 +0200
+Started POST "/__better_errors/60db28229dbd3085/eval" for ::1 at 2021-07-22 11:42:53 +0200
+Started POST "/__better_errors/60db28229dbd3085/eval" for ::1 at 2021-07-22 11:43:22 +0200
+Started POST "/__better_errors/60db28229dbd3085/eval" for ::1 at 2021-07-22 11:44:18 +0200
+Started POST "/__better_errors/60db28229dbd3085/eval" for ::1 at 2021-07-22 11:44:25 +0200
+Started POST "/__better_errors/60db28229dbd3085/eval" for ::1 at 2021-07-22 11:47:14 +0200
+Started POST "/__better_errors/60db28229dbd3085/eval" for ::1 at 2021-07-22 11:47:29 +0200
+Started POST "/__better_errors/60db28229dbd3085/eval" for ::1 at 2021-07-22 11:47:35 +0200
+Started POST "/__better_errors/60db28229dbd3085/eval" for ::1 at 2021-07-22 11:48:22 +0200
+Started POST "/__better_errors/60db28229dbd3085/eval" for ::1 at 2021-07-22 11:48:26 +0200
+Started POST "/__better_errors/60db28229dbd3085/variables" for ::1 at 2021-07-22 11:48:30 +0200
+Started POST "/__better_errors/60db28229dbd3085/eval" for ::1 at 2021-07-22 11:48:39 +0200
+Started POST "/__better_errors/60db28229dbd3085/eval" for ::1 at 2021-07-22 11:48:42 +0200
+Started POST "/__better_errors/60db28229dbd3085/eval" for ::1 at 2021-07-22 11:48:48 +0200
+Started POST "/__better_errors/60db28229dbd3085/variables" for ::1 at 2021-07-22 11:49:01 +0200
+Started POST "/__better_errors/60db28229dbd3085/eval" for ::1 at 2021-07-22 11:51:51 +0200
+Started GET "/users/new" for ::1 at 2021-07-22 11:52:58 +0200
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 11ms (Views: 10.5ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users" for ::1 at 2021-07-22 11:53:05 +0200
+Processing by UsersController#create as HTML
+  Parameters: {"authenticity_token"=>"BCXleMoo7CeGoyidBcQJHETnQI0V4pVFY4W2Yu+k92n4d3zILiCdqU/dyQtRbSS+HTFWbOiPRRNXre16CQ0KRw==", "user"=>{"email"=>"testemail", "password"=>"[FILTERED]"}}
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:9
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."password_digest" = $1 LIMIT $2[0m  [["password_digest", "$2a$12$SvkirScEn9wq8.Qs3es8ZOL0NX1KQ03wLZVE7hB1lM4Fvib/yfwL6"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:9
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "4XvtoXnvlj4PsVAlovDwEg"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:9
+  [1m[36mUser Create (1.1ms)[0m  [1m[32mINSERT INTO "users" ("email", "password_digest", "session_token", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["email", "testemail"], ["password_digest", "$2a$12$SvkirScEn9wq8.Qs3es8ZOL0NX1KQ03wLZVE7hB1lM4Fvib/yfwL6"], ["session_token", "4XvtoXnvlj4PsVAlovDwEg"], ["created_at", "2021-07-22 09:53:05.672299"], ["updated_at", "2021-07-22 09:53:05.672299"]]
+  ↳ app/controllers/users_controller.rb:9
+  [1m[35m (1.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/users_controller.rb:9
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/user.rb:31
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."password_digest" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["password_digest", "$2a$12$SvkirScEn9wq8.Qs3es8ZOL0NX1KQ03wLZVE7hB1lM4Fvib/yfwL6"], ["id", 1], ["LIMIT", 1]]
+  ↳ app/models/user.rb:31
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["session_token", "d2XzRiC2--YfAoV2VbA3MA"], ["id", 1], ["LIMIT", 1]]
+  ↳ app/models/user.rb:31
+  [1m[36mUser Update (0.3ms)[0m  [1m[33mUPDATE "users" SET "session_token" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["session_token", "d2XzRiC2--YfAoV2VbA3MA"], ["updated_at", "2021-07-22 09:53:05.677892"], ["id", 1]]
+  ↳ app/models/user.rb:31
+  [1m[35m (1.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/models/user.rb:31
+Completed 500 Internal Server Error in 209ms (ActiveRecord: 6.8ms)
+
+
+
+ActionController::UrlGenerationError - No route matches {:action=>"show", :controller=>"users"}, missing required keys: [:id]:
+  app/controllers/users_controller.rb:11:in `create'
+
+Started POST "/__better_errors/57cba84eb1e4742c/variables" for ::1 at 2021-07-22 11:53:05 +0200
+Started POST "/users" for ::1 at 2021-07-22 11:54:58 +0200
+Processing by UsersController#create as HTML
+  Parameters: {"authenticity_token"=>"BCXleMoo7CeGoyidBcQJHETnQI0V4pVFY4W2Yu+k92n4d3zILiCdqU/dyQtRbSS+HTFWbOiPRRNXre16CQ0KRw==", "user"=>{"email"=>"testemail", "password"=>"[FILTERED]"}}
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:9
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."password_digest" = $1 LIMIT $2[0m  [["password_digest", "$2a$12$x3aeoEdqBVPpHxFh.jumweHD3KCXthA2yIjq1tTJGBeanF5i.PSKm"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:9
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "4pTQHBXwVxoV64PveTLz1Q"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:9
+  [1m[36mUser Create (1.3ms)[0m  [1m[32mINSERT INTO "users" ("email", "password_digest", "session_token", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["email", "testemail"], ["password_digest", "$2a$12$x3aeoEdqBVPpHxFh.jumweHD3KCXthA2yIjq1tTJGBeanF5i.PSKm"], ["session_token", "4pTQHBXwVxoV64PveTLz1Q"], ["created_at", "2021-07-22 09:54:58.628276"], ["updated_at", "2021-07-22 09:54:58.628276"]]
+  ↳ app/controllers/users_controller.rb:9
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/users_controller.rb:9
+Completed 500 Internal Server Error in 197ms (ActiveRecord: 3.9ms)
+
+
+
+ActiveRecord::RecordNotUnique - PG::UniqueViolation: ERROR:  duplicate key value violates unique constraint "index_users_on_email"
+DETAIL:  Key (email)=(testemail) already exists.
+: INSERT INTO "users" ("email", "password_digest", "session_token", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id":
+  app/controllers/users_controller.rb:9:in `create'
+
+Started POST "/__better_errors/aada1d14014aae40/variables" for ::1 at 2021-07-22 11:54:58 +0200
+Started GET "/users/new" for ::1 at 2021-07-22 11:55:14 +0200
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 11ms (Views: 10.4ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users" for ::1 at 2021-07-22 11:55:22 +0200
+Processing by UsersController#create as HTML
+  Parameters: {"authenticity_token"=>"8DHccb+Jh/oWcFIm31TFp2pWgHAAgC0Bk+jCuBjG290MY0XBW4H2dN8Os7CL/egFM4CWkf3t/VenwJmg/m8m8w==", "user"=>{"email"=>"test@email.com", "password"=>"[FILTERED]"}}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:9
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."password_digest" = $1 LIMIT $2[0m  [["password_digest", "$2a$12$EN3MBo9AblmtB64ls5hZfelKN.eXRvZmy/TBhiwEC0fIsVu8ITFtS"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:9
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "7PGXlswpuod5nEfHwnIB_Q"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:9
+  [1m[36mUser Create (0.2ms)[0m  [1m[32mINSERT INTO "users" ("email", "password_digest", "session_token", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["email", "test@email.com"], ["password_digest", "$2a$12$EN3MBo9AblmtB64ls5hZfelKN.eXRvZmy/TBhiwEC0fIsVu8ITFtS"], ["session_token", "7PGXlswpuod5nEfHwnIB_Q"], ["created_at", "2021-07-22 09:55:22.771995"], ["updated_at", "2021-07-22 09:55:22.771995"]]
+  ↳ app/controllers/users_controller.rb:9
+  [1m[35m (1.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/users_controller.rb:9
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/user.rb:31
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."password_digest" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["password_digest", "$2a$12$EN3MBo9AblmtB64ls5hZfelKN.eXRvZmy/TBhiwEC0fIsVu8ITFtS"], ["id", 3], ["LIMIT", 1]]
+  ↳ app/models/user.rb:31
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["session_token", "3-eKGc4Hy2csMlhP6lGhBQ"], ["id", 3], ["LIMIT", 1]]
+  ↳ app/models/user.rb:31
+  [1m[36mUser Update (0.2ms)[0m  [1m[33mUPDATE "users" SET "session_token" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["session_token", "3-eKGc4Hy2csMlhP6lGhBQ"], ["updated_at", "2021-07-22 09:55:22.776431"], ["id", 3]]
+  ↳ app/models/user.rb:31
+  [1m[35m (1.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/models/user.rb:31
+Redirected to http://localhost:3000/users/3
+Completed 302 Found in 196ms (ActiveRecord: 3.9ms)
+
+
+Started GET "/users/3" for ::1 at 2021-07-22 11:55:22 +0200
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"3"}
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "3-eKGc4Hy2csMlhP6lGhBQ"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  Rendered users/show.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 10ms (Views: 9.2ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/users/3" for ::1 at 2021-07-22 11:57:45 +0200
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"3"}
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "3-eKGc4Hy2csMlhP6lGhBQ"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  Rendered users/show.html.erb within layouts/application (1.2ms)
+Completed 200 OK in 9ms (Views: 8.7ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/session/new" for ::1 at 2021-07-22 11:57:47 +0200
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (3.0ms)
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "3-eKGc4Hy2csMlhP6lGhBQ"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+Completed 200 OK in 23ms (Views: 21.5ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/session/new" for ::1 at 2021-07-22 12:01:21 +0200
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (0.5ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "3-eKGc4Hy2csMlhP6lGhBQ"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+Completed 200 OK in 12ms (Views: 11.4ms | ActiveRecord: 0.3ms)
+
+
+Started DELETE "/session" for ::1 at 2021-07-22 12:01:26 +0200
+Processing by SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"01q/UCyVUkbQaE8qBwAIeTu3av+uoF2rGY1R9nKqNJAvCCbgyJ0jyBkWrrxTqSXbYmF8HlPNjf0tpQrulAPJvg=="}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "3-eKGc4Hy2csMlhP6lGhBQ"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/user.rb:31
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."password_digest" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["password_digest", "$2a$12$EN3MBo9AblmtB64ls5hZfelKN.eXRvZmy/TBhiwEC0fIsVu8ITFtS"], ["id", 3], ["LIMIT", 1]]
+  ↳ app/models/user.rb:31
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["session_token", "XrKlETC52-KyRNfpMiYauw"], ["id", 3], ["LIMIT", 1]]
+  ↳ app/models/user.rb:31
+  [1m[36mUser Update (0.5ms)[0m  [1m[33mUPDATE "users" SET "session_token" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["session_token", "XrKlETC52-KyRNfpMiYauw"], ["updated_at", "2021-07-22 10:01:26.760649"], ["id", 3]]
+  ↳ app/models/user.rb:31
+  [1m[35m (2.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/models/user.rb:31
+Redirected to http://localhost:3000/session/new
+Completed 302 Found in 9ms (ActiveRecord: 4.3ms)
+
+
+Started GET "/session/new" for ::1 at 2021-07-22 12:01:26 +0200
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (0.5ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "3-eKGc4Hy2csMlhP6lGhBQ"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+Completed 200 OK in 15ms (Views: 13.9ms | ActiveRecord: 0.3ms)
+
+
+Started POST "/session" for ::1 at 2021-07-22 12:01:43 +0200
+Processing by SessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"haxgf9CGrunctZ3QyOehGeDOIcWYv+JjllHvoZytLwN5/vnPNI7fZxXLfEacToy7uRg3JGXSMjWiebS5egTSLQ==", "user"=>{"email"=>"test@email.com", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "test@email.com"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:9
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/user.rb:31
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."password_digest" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["password_digest", "$2a$12$EN3MBo9AblmtB64ls5hZfelKN.eXRvZmy/TBhiwEC0fIsVu8ITFtS"], ["id", 3], ["LIMIT", 1]]
+  ↳ app/models/user.rb:31
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["session_token", "HZSV6dALvwMsKoXurkJVAA"], ["id", 3], ["LIMIT", 1]]
+  ↳ app/models/user.rb:31
+  [1m[36mUser Update (0.2ms)[0m  [1m[33mUPDATE "users" SET "session_token" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["session_token", "HZSV6dALvwMsKoXurkJVAA"], ["updated_at", "2021-07-22 10:01:43.467242"], ["id", 3]]
+  ↳ app/models/user.rb:31
+  [1m[35m (2.9ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/models/user.rb:31
+Redirected to http://localhost:3000/users
+Completed 302 Found in 202ms (ActiveRecord: 4.2ms)
+
+
+Started GET "/users" for ::1 at 2021-07-22 12:01:43 +0200
+  
+ActionController::RoutingError (No route matches [GET] "/users"):
+  
+actionpack (5.2.6) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.6) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.6) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.6) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.6) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.6) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.6) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.6) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.2) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.6) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.6) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3) lib/rack/method_override.rb:24:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.6) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.6) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.6) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+railties (5.2.6) lib/rails/engine.rb:524:in `call'
+puma (3.12.6) lib/puma/configuration.rb:227:in `call'
+puma (3.12.6) lib/puma/server.rb:706:in `handle_request'
+puma (3.12.6) lib/puma/server.rb:476:in `process_client'
+puma (3.12.6) lib/puma/server.rb:334:in `block in run'
+puma (3.12.6) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/users" for ::1 at 2021-07-22 12:11:14 +0200
+  
+ActionController::RoutingError (No route matches [GET] "/users"):
+  
+actionpack (5.2.6) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.6) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.6) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.6) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.6) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.6) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.6) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.6) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.2) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.6) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.6) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3) lib/rack/method_override.rb:24:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.6) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.6) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.6) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+railties (5.2.6) lib/rails/engine.rb:524:in `call'
+puma (3.12.6) lib/puma/configuration.rb:227:in `call'
+puma (3.12.6) lib/puma/server.rb:706:in `handle_request'
+puma (3.12.6) lib/puma/server.rb:476:in `process_client'
+puma (3.12.6) lib/puma/server.rb:334:in `block in run'
+puma (3.12.6) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/users/new" for ::1 at 2021-07-22 12:11:18 +0200
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (0.5ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "HZSV6dALvwMsKoXurkJVAA"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+Completed 200 OK in 19ms (Views: 14.5ms | ActiveRecord: 4.2ms)
+
+
+Started DELETE "/session" for ::1 at 2021-07-22 12:11:29 +0200
+Processing by SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"rVzHL4vJxQgyLEqCpRR1zlv7nY0jr0d2A8JpZnRMH5hRDl6fb8G0hvtSqxTxvVhsAi2LbN7ClyA36jJ+kuXitg=="}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "HZSV6dALvwMsKoXurkJVAA"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/user.rb:31
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."password_digest" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["password_digest", "$2a$12$EN3MBo9AblmtB64ls5hZfelKN.eXRvZmy/TBhiwEC0fIsVu8ITFtS"], ["id", 3], ["LIMIT", 1]]
+  ↳ app/models/user.rb:31
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["session_token", "ovzxkmcdNLW7EJvbmHIufw"], ["id", 3], ["LIMIT", 1]]
+  ↳ app/models/user.rb:31
+  [1m[36mUser Update (0.4ms)[0m  [1m[33mUPDATE "users" SET "session_token" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["session_token", "ovzxkmcdNLW7EJvbmHIufw"], ["updated_at", "2021-07-22 10:11:29.748522"], ["id", 3]]
+  ↳ app/models/user.rb:31
+  [1m[35m (3.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/models/user.rb:31
+Redirected to http://localhost:3000/session/new
+Completed 302 Found in 9ms (ActiveRecord: 4.4ms)
+
+
+Started GET "/session/new" for ::1 at 2021-07-22 12:11:29 +0200
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (0.5ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "HZSV6dALvwMsKoXurkJVAA"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+Completed 200 OK in 8ms (Views: 8.0ms | ActiveRecord: 0.2ms)
+
+
+Started POST "/session" for ::1 at 2021-07-22 12:11:42 +0200
+Processing by SessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"vpX1INb10KmVXSuSY0Cluq/FzNSyI3UyMi3K3lvey05Cx2yQMv2hJ1wjygQ36YgY9hPaNU9OpWQGBZHGvXc2YA==", "user"=>{"email"=>"josep@email.com", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "josep@email.com"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:9
+Completed 500 Internal Server Error in 3ms (ActiveRecord: 0.2ms)
+
+
+
+NoMethodError - undefined method `is_password?' for nil:NilClass:
+  app/models/user.rb:11:in `find_by_credentials'
+  app/controllers/sessions_controller.rb:7:in `create'
+
+Started POST "/__better_errors/906a3c632d6f7479/variables" for ::1 at 2021-07-22 12:11:42 +0200
+Started GET "/users/new" for ::1 at 2021-07-22 12:11:44 +0200
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (0.5ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "HZSV6dALvwMsKoXurkJVAA"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+Completed 200 OK in 19ms (Views: 17.9ms | ActiveRecord: 0.2ms)
+
+
+Started POST "/users" for ::1 at 2021-07-22 12:11:53 +0200
+Processing by UsersController#create as HTML
+  Parameters: {"authenticity_token"=>"JkwzVYNzFa1gpRofkSxGrtE2R4sspDx9gFdBxpjl+XnaHqrlZ3tkI6nb+4nFhWsMiOBRatHJ7Cu0fxrefkwEVw==", "user"=>{"email"=>"josep@email.com", "password"=>"[FILTERED]"}}
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:9
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."password_digest" = $1 LIMIT $2[0m  [["password_digest", "$2a$12$Qy813iTvpQn7Y8PrGxMWNukLv7TbxhdPdoBCbcegRYOZrasHhUHmm"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:9
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "QKIdXG6-PbRe0XR8VPNt7g"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:9
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO "users" ("email", "password_digest", "session_token", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["email", "josep@email.com"], ["password_digest", "$2a$12$Qy813iTvpQn7Y8PrGxMWNukLv7TbxhdPdoBCbcegRYOZrasHhUHmm"], ["session_token", "QKIdXG6-PbRe0XR8VPNt7g"], ["created_at", "2021-07-22 10:11:53.427790"], ["updated_at", "2021-07-22 10:11:53.427790"]]
+  ↳ app/controllers/users_controller.rb:9
+  [1m[35m (1.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/users_controller.rb:9
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/user.rb:31
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."password_digest" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["password_digest", "$2a$12$Qy813iTvpQn7Y8PrGxMWNukLv7TbxhdPdoBCbcegRYOZrasHhUHmm"], ["id", 4], ["LIMIT", 1]]
+  ↳ app/models/user.rb:31
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["session_token", "1h-PyVdr0syugmFSHKXWmg"], ["id", 4], ["LIMIT", 1]]
+  ↳ app/models/user.rb:31
+  [1m[36mUser Update (0.2ms)[0m  [1m[33mUPDATE "users" SET "session_token" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["session_token", "1h-PyVdr0syugmFSHKXWmg"], ["updated_at", "2021-07-22 10:11:53.432195"], ["id", 4]]
+  ↳ app/models/user.rb:31
+  [1m[35m (1.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/models/user.rb:31
+Redirected to http://localhost:3000/users/4
+Completed 302 Found in 194ms (ActiveRecord: 4.0ms)
+
+
+Started GET "/users/4" for ::1 at 2021-07-22 12:11:53 +0200
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"4"}
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "1h-PyVdr0syugmFSHKXWmg"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  Rendered users/show.html.erb within layouts/application (1.1ms)
+Completed 200 OK in 10ms (Views: 8.8ms | ActiveRecord: 0.3ms)
+
+
+Started DELETE "/session" for ::1 at 2021-07-22 12:20:43 +0200
+Processing by SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"BdDrAyeSwUUA1SWEyCuLg34Kd3MhSU0bVzH/4bUj1y35gnKzw5qwy8mrxBKcgqYhJ9xhktwknU1jGaT5U4oqAw=="}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "1h-PyVdr0syugmFSHKXWmg"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/user.rb:31
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."password_digest" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["password_digest", "$2a$12$Qy813iTvpQn7Y8PrGxMWNukLv7TbxhdPdoBCbcegRYOZrasHhUHmm"], ["id", 4], ["LIMIT", 1]]
+  ↳ app/models/user.rb:31
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["session_token", "8Z1nj9PQEDea-9nPhdJEzQ"], ["id", 4], ["LIMIT", 1]]
+  ↳ app/models/user.rb:31
+  [1m[36mUser Update (0.3ms)[0m  [1m[33mUPDATE "users" SET "session_token" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["session_token", "8Z1nj9PQEDea-9nPhdJEzQ"], ["updated_at", "2021-07-22 10:20:43.782694"], ["id", 4]]
+  ↳ app/models/user.rb:31
+  [1m[35m (1.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/models/user.rb:31
+Redirected to http://localhost:3000/session/new
+Completed 302 Found in 9ms (ActiveRecord: 2.7ms)
+
+
+Started GET "/session/new" for ::1 at 2021-07-22 12:20:43 +0200
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (0.7ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "1h-PyVdr0syugmFSHKXWmg"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+Completed 200 OK in 10ms (Views: 9.3ms | ActiveRecord: 0.2ms)
+
+
+Started POST "/session" for ::1 at 2021-07-22 12:20:52 +0200
+Processing by SessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"hZZ1m2lBVq5wbBLhmfAfSRIOBO9Mxa0ErUvCbG683Nd5xOwrjUknILkS83fNWTLrS9gSDrGofVKZY5l0iBUh+Q==", "user"=>{"email"=>"josep@email.com", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "josep@email.com"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:9
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/user.rb:31
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."password_digest" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["password_digest", "$2a$12$Qy813iTvpQn7Y8PrGxMWNukLv7TbxhdPdoBCbcegRYOZrasHhUHmm"], ["id", 4], ["LIMIT", 1]]
+  ↳ app/models/user.rb:31
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["session_token", "QUdl-gR4sbxcK8dxelpBtg"], ["id", 4], ["LIMIT", 1]]
+  ↳ app/models/user.rb:31
+  [1m[36mUser Update (0.2ms)[0m  [1m[33mUPDATE "users" SET "session_token" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["session_token", "QUdl-gR4sbxcK8dxelpBtg"], ["updated_at", "2021-07-22 10:20:52.504923"], ["id", 4]]
+  ↳ app/models/user.rb:31
+  [1m[35m (2.9ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/models/user.rb:31
+Completed 500 Internal Server Error in 193ms (ActiveRecord: 4.0ms)
+
+
+
+ActionController::UrlGenerationError - No route matches {:action=>"show", :controller=>"users", :id=>nil}, missing required keys: [:id]:
+  app/controllers/sessions_controller.rb:14:in `create'
+
+Started POST "/__better_errors/21126a12586bf5a3/variables" for ::1 at 2021-07-22 12:20:52 +0200
+Started POST "/__better_errors/21126a12586bf5a3/eval" for ::1 at 2021-07-22 12:21:05 +0200
+Started POST "/session" for ::1 at 2021-07-22 12:21:53 +0200
+Processing by SessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"hZZ1m2lBVq5wbBLhmfAfSRIOBO9Mxa0ErUvCbG683Nd5xOwrjUknILkS83fNWTLrS9gSDrGofVKZY5l0iBUh+Q==", "user"=>{"email"=>"josep@email.com", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "josep@email.com"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:9
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/user.rb:31
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."password_digest" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["password_digest", "$2a$12$Qy813iTvpQn7Y8PrGxMWNukLv7TbxhdPdoBCbcegRYOZrasHhUHmm"], ["id", 4], ["LIMIT", 1]]
+  ↳ app/models/user.rb:31
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["session_token", "Q-Tp_0XXAIiPkchLaKBINQ"], ["id", 4], ["LIMIT", 1]]
+  ↳ app/models/user.rb:31
+  [1m[36mUser Update (0.2ms)[0m  [1m[33mUPDATE "users" SET "session_token" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["session_token", "Q-Tp_0XXAIiPkchLaKBINQ"], ["updated_at", "2021-07-22 10:21:53.801931"], ["id", 4]]
+  ↳ app/models/user.rb:31
+  [1m[35m (1.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/models/user.rb:31
+Redirected to http://localhost:3000/users/4
+Completed 302 Found in 198ms (ActiveRecord: 4.9ms)
+
+
+Started GET "/users/4" for ::1 at 2021-07-22 12:21:53 +0200
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"4"}
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "Q-Tp_0XXAIiPkchLaKBINQ"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  Rendered users/show.html.erb within layouts/application (1.1ms)
+Completed 200 OK in 9ms (Views: 8.9ms | ActiveRecord: 0.2ms)
+
+
+Started DELETE "/session" for ::1 at 2021-07-22 12:21:55 +0200
+Processing by SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"bKhyPnuNgrhnEElp7hFvpk/ebQivG+SJBf4Zh9E7RCqQ+uuOn4XzNq5uqP+6uEIEFgh76VJ2NN8x1kKfN5K5BA=="}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "Q-Tp_0XXAIiPkchLaKBINQ"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/user.rb:31
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."password_digest" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["password_digest", "$2a$12$Qy813iTvpQn7Y8PrGxMWNukLv7TbxhdPdoBCbcegRYOZrasHhUHmm"], ["id", 4], ["LIMIT", 1]]
+  ↳ app/models/user.rb:31
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["session_token", "b43Ho0e8a0wvzlbLtoaW9A"], ["id", 4], ["LIMIT", 1]]
+  ↳ app/models/user.rb:31
+  [1m[36mUser Update (0.2ms)[0m  [1m[33mUPDATE "users" SET "session_token" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["session_token", "b43Ho0e8a0wvzlbLtoaW9A"], ["updated_at", "2021-07-22 10:21:55.338893"], ["id", 4]]
+  ↳ app/models/user.rb:31
+  [1m[35m (1.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/models/user.rb:31
+Redirected to http://localhost:3000/session/new
+Completed 302 Found in 11ms (ActiveRecord: 2.3ms)
+
+
+Started GET "/session/new" for ::1 at 2021-07-22 12:21:55 +0200
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (0.4ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "Q-Tp_0XXAIiPkchLaKBINQ"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+Completed 200 OK in 9ms (Views: 8.4ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/users/new" for ::1 at 2021-07-22 12:21:56 +0200
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (0.5ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "Q-Tp_0XXAIiPkchLaKBINQ"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+Completed 200 OK in 18ms (Views: 17.4ms | ActiveRecord: 0.3ms)
+
+
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" LIMIT $1[0m  [["LIMIT", 11]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" LIMIT $1[0m  [["LIMIT", 11]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" LIMIT $1[0m  [["LIMIT", 11]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" LIMIT $1[0m  [["LIMIT", 11]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+Started POST "/users" for ::1 at 2021-07-22 12:32:18 +0200
+Processing by UsersController#create as HTML
+  Parameters: {"authenticity_token"=>"04XMChRthFI8hcPbswK+gDlpOlohy7RXj5o7umQbVyAv11W68GX13PX7Ik3nq5MiYL8su9ymZAG7smCigrKqDg==", "user"=>{"email"=>"test@email.com", "password"=>"[FILTERED]"}}
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:9
+  [1m[36mUser Exists (0.6ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."password_digest" = $1 LIMIT $2[0m  [["password_digest", "$2a$12$YYKhOAKFa.iJLPw37pMBOuetgpx5HbwHUa1sbnj1aqDYdY5RW/VOC"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:9
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "fEWdwuxnGqW5JUnYSg8vZQ"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:9
+  [1m[36mUser Create (0.9ms)[0m  [1m[32mINSERT INTO "users" ("email", "password_digest", "session_token", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["email", "test@email.com"], ["password_digest", "$2a$12$YYKhOAKFa.iJLPw37pMBOuetgpx5HbwHUa1sbnj1aqDYdY5RW/VOC"], ["session_token", "fEWdwuxnGqW5JUnYSg8vZQ"], ["created_at", "2021-07-22 10:32:19.152587"], ["updated_at", "2021-07-22 10:32:19.152587"]]
+  ↳ app/controllers/users_controller.rb:9
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/users_controller.rb:9
+Completed 500 Internal Server Error in 190ms (ActiveRecord: 1.9ms)
+
+
+
+ActiveRecord::RecordNotUnique - PG::UniqueViolation: ERROR:  duplicate key value violates unique constraint "index_users_on_email"
+DETAIL:  Key (email)=(test@email.com) already exists.
+: INSERT INTO "users" ("email", "password_digest", "session_token", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id":
+  app/controllers/users_controller.rb:9:in `create'
+
+Started POST "/__better_errors/c849f573c8c57ddc/variables" for ::1 at 2021-07-22 12:32:19 +0200
+Started POST "/__better_errors/c849f573c8c57ddc/eval" for ::1 at 2021-07-22 12:32:40 +0200
+Started POST "/__better_errors/c849f573c8c57ddc/eval" for ::1 at 2021-07-22 12:32:44 +0200
+Started POST "/__better_errors/c849f573c8c57ddc/eval" for ::1 at 2021-07-22 12:33:03 +0200
+Started POST "/__better_errors/c849f573c8c57ddc/eval" for ::1 at 2021-07-22 12:33:09 +0200
+Started POST "/__better_errors/c849f573c8c57ddc/eval" for ::1 at 2021-07-22 12:33:14 +0200
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:9
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."password_digest" = $1 LIMIT $2[0m  [["password_digest", "$2a$12$YYKhOAKFa.iJLPw37pMBOuetgpx5HbwHUa1sbnj1aqDYdY5RW/VOC"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:9
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "fEWdwuxnGqW5JUnYSg8vZQ"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:9
+  [1m[36mUser Create (0.8ms)[0m  [1m[32mINSERT INTO "users" ("email", "password_digest", "session_token", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["email", "test@email.com"], ["password_digest", "$2a$12$YYKhOAKFa.iJLPw37pMBOuetgpx5HbwHUa1sbnj1aqDYdY5RW/VOC"], ["session_token", "fEWdwuxnGqW5JUnYSg8vZQ"], ["created_at", "2021-07-22 10:32:19.152587"], ["updated_at", "2021-07-22 10:32:19.152587"]]
+  ↳ app/controllers/users_controller.rb:9
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/users_controller.rb:9
+Started POST "/__better_errors/c849f573c8c57ddc/eval" for ::1 at 2021-07-22 12:33:20 +0200
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:9
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."password_digest" = $1 LIMIT $2[0m  [["password_digest", "$2a$12$YYKhOAKFa.iJLPw37pMBOuetgpx5HbwHUa1sbnj1aqDYdY5RW/VOC"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:9
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "fEWdwuxnGqW5JUnYSg8vZQ"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:9
+  [1m[36mUser Create (0.6ms)[0m  [1m[32mINSERT INTO "users" ("email", "password_digest", "session_token", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["email", "test@email.com"], ["password_digest", "$2a$12$YYKhOAKFa.iJLPw37pMBOuetgpx5HbwHUa1sbnj1aqDYdY5RW/VOC"], ["session_token", "fEWdwuxnGqW5JUnYSg8vZQ"], ["created_at", "2021-07-22 10:32:19.152587"], ["updated_at", "2021-07-22 10:32:19.152587"]]
+  ↳ app/controllers/users_controller.rb:9
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/users_controller.rb:9
+Started GET "/users/new" for ::1 at 2021-07-22 12:33:30 +0200
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (0.9ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "Q-Tp_0XXAIiPkchLaKBINQ"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+Completed 200 OK in 13ms (Views: 12.4ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/session/new" for ::1 at 2021-07-22 12:33:32 +0200
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (0.5ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "Q-Tp_0XXAIiPkchLaKBINQ"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+Completed 200 OK in 19ms (Views: 18.4ms | ActiveRecord: 0.2ms)
+
+
+Started POST "/session" for ::1 at 2021-07-22 12:33:44 +0200
+Processing by SessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"nAOjA8lEAlsVnCNbTL4zdpds12w1VFxHibRW8UJsrHtgUTqzLUxz1dziws0YFx7UzrrBjcg5jBG9nA3ppMVRVQ==", "user"=>{"email"=>"test@email.com", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "test@email.com"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:9
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/user.rb:31
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."password_digest" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["password_digest", "$2a$12$EN3MBo9AblmtB64ls5hZfelKN.eXRvZmy/TBhiwEC0fIsVu8ITFtS"], ["id", 3], ["LIMIT", 1]]
+  ↳ app/models/user.rb:31
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["session_token", "-0Fdu4PWHyxcOGMU-a7Usw"], ["id", 3], ["LIMIT", 1]]
+  ↳ app/models/user.rb:31
+  [1m[36mUser Update (0.2ms)[0m  [1m[33mUPDATE "users" SET "session_token" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["session_token", "-0Fdu4PWHyxcOGMU-a7Usw"], ["updated_at", "2021-07-22 10:33:45.079466"], ["id", 3]]
+  ↳ app/models/user.rb:31
+  [1m[35m (2.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/models/user.rb:31
+Redirected to http://localhost:3000/users/3
+Completed 302 Found in 193ms (ActiveRecord: 3.9ms)
+
+
+Started GET "/users/3" for ::1 at 2021-07-22 12:33:45 +0200
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"3"}
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "-0Fdu4PWHyxcOGMU-a7Usw"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  Rendered users/show.html.erb within layouts/application (0.9ms)
+Completed 200 OK in 9ms (Views: 8.2ms | ActiveRecord: 0.2ms)
+
+
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+Started DELETE "/session" for ::1 at 2021-07-22 12:35:02 +0200
+Processing by SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"hokK08YSyDQqtrK/HTUU5qTv8Q4uz+TWYGrgYkXBT3h625NjIhq5uuPIUylJnDlE/Tnn79OiNIBUQrt6o2iyVg=="}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "-0Fdu4PWHyxcOGMU-a7Usw"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/user.rb:31
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."password_digest" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["password_digest", "$2a$12$EN3MBo9AblmtB64ls5hZfelKN.eXRvZmy/TBhiwEC0fIsVu8ITFtS"], ["id", 3], ["LIMIT", 1]]
+  ↳ app/models/user.rb:31
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["session_token", "eAU-3bj8pYP8Ix3IGfTTig"], ["id", 3], ["LIMIT", 1]]
+  ↳ app/models/user.rb:31
+  [1m[36mUser Update (0.2ms)[0m  [1m[33mUPDATE "users" SET "session_token" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["session_token", "eAU-3bj8pYP8Ix3IGfTTig"], ["updated_at", "2021-07-22 10:35:02.367907"], ["id", 3]]
+  ↳ app/models/user.rb:31
+  [1m[35m (1.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/models/user.rb:31
+Redirected to http://localhost:3000/session/new
+Completed 302 Found in 7ms (ActiveRecord: 2.5ms)
+
+
+Started GET "/session/new" for ::1 at 2021-07-22 12:35:02 +0200
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (0.6ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "-0Fdu4PWHyxcOGMU-a7Usw"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+Completed 200 OK in 9ms (Views: 7.9ms | ActiveRecord: 0.3ms)
+
+
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+Started POST "/session" for ::1 at 2021-07-22 12:35:43 +0200
+Processing by SessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"gugzViiK1OS98DqyoaJZissFX3wR3syQQEaBQdAowM9+uqrmzIKlanSO2yT1C3QoktNJneyzHMZ0btpZNoE94Q==", "user"=>{"email"=>"test@email.com", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "test@email.com"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:9
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/user.rb:31
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."password_digest" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["password_digest", "$2a$12$EN3MBo9AblmtB64ls5hZfelKN.eXRvZmy/TBhiwEC0fIsVu8ITFtS"], ["id", 3], ["LIMIT", 1]]
+  ↳ app/models/user.rb:31
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["session_token", "9K18zcxL3jUjVAmf-qa5bQ"], ["id", 3], ["LIMIT", 1]]
+  ↳ app/models/user.rb:31
+  [1m[36mUser Update (0.2ms)[0m  [1m[33mUPDATE "users" SET "session_token" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["session_token", "9K18zcxL3jUjVAmf-qa5bQ"], ["updated_at", "2021-07-22 10:35:43.416081"], ["id", 3]]
+  ↳ app/models/user.rb:31
+  [1m[35m (2.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/models/user.rb:31
+Redirected to http://localhost:3000/users/3
+Completed 302 Found in 193ms (ActiveRecord: 4.2ms)
+
+
+Started GET "/users/3" for ::1 at 2021-07-22 12:35:43 +0200
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"3"}
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "9K18zcxL3jUjVAmf-qa5bQ"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:6
+  Rendered users/show.html.erb within layouts/application (0.9ms)
+Completed 200 OK in 9ms (Views: 8.1ms | ActiveRecord: 0.2ms)
+
+
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
