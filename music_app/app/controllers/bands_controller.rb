@@ -26,8 +26,13 @@ class BandsController < ApplicationController
     end
 
     def edit # edit_band_url (GET) /bands/:id/edit
-        @band = Band.find(params[:id])
-        render :edit
+        @band = Band.find_by_id(params[:id])
+        if @band
+            render :edit
+        else
+            flash[:errors] = ["No band with ID ##{params[:id]}."]
+            redirect_to bands_url
+        end
     end
 
     def update # bands_url (PATCH / PUT) /bands/:id
