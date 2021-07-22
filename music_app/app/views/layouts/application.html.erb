@@ -8,25 +8,42 @@
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
-
   <body>
-    <%= yield %>
+    <div class='main-content'>
+      <h1 class='main-logo'>Music App</h1>
+
+      <% if logged_in? %>
+        <nav>
+          <div class='user-detail'>
+            <p>Logged in as <%= current_user.email %></p>
+
+            <form action=<%= session_url %> method='POST'>
+              <input
+                type='hidden'
+                name='_method'
+                value='DELETE'>
+
+              <input
+                type='hidden'
+                name='authenticity_token'
+                value=<%= form_authenticity_token %>>
+
+              <input type='submit' Value='Sign Out'>
+            </form>
+          </div>
+        </nav>
+      <% end %>
+
+      <% if flash[:notice] %>
+        <p><%= flash[:notice] %></p>
+      <% end %>
+
+      <% if flash[:errors] %>
+        <p><%= flash[:errors].join(', ') %></p>
+      <% end %>
+
+      <%= yield %>
+    </div>
+    
   </body>
-
-  <% if logged_in? %>
-    <p>Logged in as <%= current_user.email %></p>
-    <form action=<%= session_url %> method='POST'>
-      <input
-        type='hidden'
-        name='_method'
-        value='DELETE'>
-
-      <input
-        type='hidden'
-        name='authenticity_token'
-        value=<%= form_authenticity_token %>>
-
-      <input type='submit' Value='Sign Out'>
-    </form>
-  <% end %>
 </html>
