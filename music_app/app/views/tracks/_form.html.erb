@@ -51,7 +51,7 @@
             id='track_bonus_t'
             name=track[bonus]
             value='t'
-            <%= 'checked' if !track.bonus %>>
+            <%= 'checked' if track.bonus %>>
 
         <label for='track_bonus_f'>Bonus</label>
         <input
@@ -59,7 +59,7 @@
             id='track_bonus_f'
             name=track[bonus]
             value='f'
-            <%= 'checked' if track.bonus %>>
+            <%= 'checked' if !track.bonus %>>
     </p>
 
     <p>
