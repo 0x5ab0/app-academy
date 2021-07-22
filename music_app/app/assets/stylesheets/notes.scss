@@ -1,0 +1,14 @@
+.note-item {
+    
+    width: 400px;
+
+    p {
+        display: block;
+        margin-bottom: 20px;
+    }
+
+    .note-item-info {
+        display: flex;
+        justify-content: space-between;
+    }
+}
