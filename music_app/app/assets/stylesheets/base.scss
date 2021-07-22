@@ -4,7 +4,7 @@ p, a, input {
 }
 
 p {
-    color: #fff
+    color: #fff;
 }
 
 a, input[type='submit'] {
@@ -30,7 +30,7 @@ a, input[type='submit'] {
     }
 }
 
-input[type='submit'] {
+input[type="submit"] {
     padding: 10px;
     border-radius: 5px;
     border: none;
@@ -76,13 +76,13 @@ body {
         display: flex;
         justify-content: space-around;
 
-        .user-detail {
-            display: flex;
+    .user-detail {
+        display: flex;
 
-            p {
-                margin: 10px;
-            }
+        p {
+            margin: 10px;
         }
+    }
     }
 }
 
