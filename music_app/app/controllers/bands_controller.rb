@@ -1,20 +1,22 @@
 class BandsController < ApplicationController
-    def index # bands_url (GET) /bands
+    before_action :require_user!
+    
+    def index
         @bands = Band.all
         render :index
     end
 
-    def show # band_url (GET) /bands/:id
+    def show
         @band = Band.find(params[:id])
         render :show
     end
 
-    def new # new_band_url (GET) /bands/new
+    def new
         @band = Band.new
         render :new
     end
 
-    def create # bands_url (POST) /bands
+    def create
         @band = Band.new(band_params)
 
         if @band.save
@@ -25,7 +27,7 @@ class BandsController < ApplicationController
         end
     end
 
-    def edit # edit_band_url (GET) /bands/:id/edit
+    def edit
         @band = Band.find_by_id(params[:id])
         if @band
             render :edit
@@ -35,7 +37,7 @@ class BandsController < ApplicationController
         end
     end
 
-    def update # bands_url (PATCH / PUT) /bands/:id
+    def update
         @band = Band.find(params[:id])
 
         if @band
@@ -47,7 +49,7 @@ class BandsController < ApplicationController
         end
     end
 
-    def destroy # bands_url (DELETE) /bands/:id
+    def destroy
         @band = Band.find(params[:id])
         @band.destroy
         redirect_to bands_url
