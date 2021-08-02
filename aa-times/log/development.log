@@ -469,3 +469,13 @@ Completed 200 OK in 18ms (Views: 17.0ms | ActiveRecord: 0.0ms)
 
 Started GET "/assets/new_office.jpg" for ::1 at 2021-08-02 22:13:22 +0200
 Started GET "/assets/AA_Times_Logo.png" for ::1 at 2021-08-02 22:13:22 +0200
+Started GET "/assets/AA_Times_Logo.png" for ::1 at 2021-08-02 22:14:12 +0200
+Started GET "/assets/new_office.jpg" for ::1 at 2021-08-02 22:14:12 +0200
+Started GET "/assets/application.self-901fa1550e3e5a1409fe20039dc9c805fd002f39b638c6929ee57181a5099bfe.css?body=1&livereload=1627935336164" for ::1 at 2021-08-02 22:15:35 +0200
+Started GET "/assets/application.self-901fa1550e3e5a1409fe20039dc9c805fd002f39b638c6929ee57181a5099bfe.css?body=1&livereload=1627935336166" for ::1 at 2021-08-02 22:15:35 +0200
+Started GET "/assets/application.self-901fa1550e3e5a1409fe20039dc9c805fd002f39b638c6929ee57181a5099bfe.css?body=1&livereload=1627935349242" for ::1 at 2021-08-02 22:15:48 +0200
+Started GET "/assets/application.self-901fa1550e3e5a1409fe20039dc9c805fd002f39b638c6929ee57181a5099bfe.css?body=1&livereload=1627935349243" for ::1 at 2021-08-02 22:15:48 +0200
+Started GET "/assets/application.self-901fa1550e3e5a1409fe20039dc9c805fd002f39b638c6929ee57181a5099bfe.css?body=1&livereload=1627935367828" for ::1 at 2021-08-02 22:16:07 +0200
+Started GET "/assets/application.self-901fa1550e3e5a1409fe20039dc9c805fd002f39b638c6929ee57181a5099bfe.css?body=1&livereload=1627935367829" for ::1 at 2021-08-02 22:16:07 +0200
+Started GET "/assets/application.self-901fa1550e3e5a1409fe20039dc9c805fd002f39b638c6929ee57181a5099bfe.css?body=1&livereload=1627935368369" for ::1 at 2021-08-02 22:16:07 +0200
+Started GET "/assets/application.self-901fa1550e3e5a1409fe20039dc9c805fd002f39b638c6929ee57181a5099bfe.css?body=1&livereload=1627935368370" for ::1 at 2021-08-02 22:16:07 +0200
