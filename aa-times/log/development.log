@@ -485,3 +485,25 @@ Started GET "/assets/application.self-901fa1550e3e5a1409fe20039dc9c805fd002f39b6
 Started GET "/assets/application.self-901fa1550e3e5a1409fe20039dc9c805fd002f39b638c6929ee57181a5099bfe.css?body=1&livereload=1627935436578" for ::1 at 2021-08-02 22:17:15 +0200
 Started GET "/assets/application.self-901fa1550e3e5a1409fe20039dc9c805fd002f39b638c6929ee57181a5099bfe.css?body=1&livereload=1627935466437" for ::1 at 2021-08-02 22:17:45 +0200
 Started GET "/assets/application.self-901fa1550e3e5a1409fe20039dc9c805fd002f39b638c6929ee57181a5099bfe.css?body=1&livereload=1627935466437&livereload=1627935466437" for ::1 at 2021-08-02 22:17:45 +0200
+Started GET "/" for ::1 at 2021-08-02 22:18:21 +0200
+Processing by StaticPagesController#index as HTML
+  Rendering static_pages/index.html.erb within layouts/application
+  Rendered shared/_sections_sidebar.html.erb (0.1ms)
+  Rendered shared/_gear_dropdown.html.erb (0.1ms)
+  Rendered shared/_main_nav.html.erb (1.2ms)
+  Rendered shared/_masthead.html.erb (0.3ms)
+  Rendered shared/_search_modal.html.erb (0.5ms)
+  Rendered shared/_sections_nav.html.erb (1.8ms)
+  Rendered shared/_search_modal.html.erb (0.0ms)
+  Rendered shared/_main_content.html.erb (0.3ms)
+  Rendered static_pages/index.html.erb within layouts/application (6.2ms)
+Completed 200 OK in 20ms (Views: 19.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.self-36894db126594a43d24e6aaa66395c66618737acd9ab9e2af95648be6ee88c48.css?body=1" for ::1 at 2021-08-02 22:18:21 +0200
+Started GET "/assets/AA_Times_Logo.png" for ::1 at 2021-08-02 22:18:21 +0200
+Started GET "/assets/new_office.jpg" for ::1 at 2021-08-02 22:18:21 +0200
+Started GET "/assets/application.self-36894db126594a43d24e6aaa66395c66618737acd9ab9e2af95648be6ee88c48.css?body=1&livereload=1627935622001" for ::1 at 2021-08-02 22:20:21 +0200
+Started GET "/assets/application.self-36894db126594a43d24e6aaa66395c66618737acd9ab9e2af95648be6ee88c48.css?body=1&livereload=1627935622004" for ::1 at 2021-08-02 22:20:21 +0200
+Started GET "/assets/application.self-36894db126594a43d24e6aaa66395c66618737acd9ab9e2af95648be6ee88c48.css?body=1&livereload=1627935622541" for ::1 at 2021-08-02 22:20:21 +0200
+Started GET "/assets/application.self-36894db126594a43d24e6aaa66395c66618737acd9ab9e2af95648be6ee88c48.css?body=1&livereload=1627935622542" for ::1 at 2021-08-02 22:20:21 +0200
