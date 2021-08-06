@@ -8,20 +8,35 @@ class ControllerBase
 
   # Setup the controller
   def initialize(req, res)
+    @req = req
+    @res = res
   end
 
   # Helper method to alias @already_built_response
   def already_built_response?
+    @already_built_response
   end
 
   # Set the response status code and header
   def redirect_to(url)
+    prepare_render_or_redirect
+
+    res['Location'] = url
+    res.status = 302
+
+    nil
   end
 
   # Populate the response with content.
   # Set the response's content type to the given type.
   # Raise an error if the developer tries to double render.
   def render_content(content, content_type)
+    prepare_render_or_redirect
+
+    @res.write(content)
+    @res['Content-Type'] = content_type
+
+    nil
   end
 
   # use ERB and binding to evaluate templates
@@ -35,6 +50,13 @@ class ControllerBase
 
   # use this with the router to call action_name (:index, :show, :create...)
   def invoke_action(name)
+  end
+
+  private
+
+  def prepare_render_or_redirect
+    raise 'double render error' if already_built_response?
+    @already_built_response = true
   end
 end
 
