@@ -8,8 +8,10 @@
 
 User.destroy_all
 Tweet.destroy_all
+Mention.destroy_all
+Follow.destroy_all
 
-CATS = %w(breakfast earl curie markov gizmo kiki sally)
+CATS = %w(breakfast earl curie markov gizmo kiki sally jet frey pineapple)
 
 CATS.each do |cat|
   u = User.create!(username: cat, password: "#{cat}#{cat}")
@@ -31,8 +33,15 @@ MESSAGES = [
 ]
 
 User.all.each do |user|
+  user
+    .followers
+    .concat(User.order('RANDOM()').limit(4))
+
   40.times do
     msg = MESSAGES.sample
-    Tweet.create!(user_id: user.id, content: msg, created_at: rand(3000).days.ago)
+    t = Tweet.create!(user_id: user.id, content: msg, created_at: rand(3000).days.ago)
+    Mention.create(user_id: user.id, tweet_id: t.id)
   end
 end
+
+
