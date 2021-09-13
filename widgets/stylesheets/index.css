@@ -1,0 +1,16 @@
+h1 {
+  text-align: center;
+  margin: 15px 0;
+}
+
+.clock {
+  width: 300px;
+  background-color: lightgray;
+  padding: 10px;
+  margin: auto;
+}
+
+.clock p {
+  display: flex;
+  justify-content: space-between;
+}

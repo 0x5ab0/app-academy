@@ -36,17 +36,14 @@ class Clock extends React.Component {
         return (
             <div>
                 <h1>Clock</h1>
-                <div>
+                <div className='clock'>
                     <p>
-                        <span>
-                            Time:
-                        </span>
-                        <span>
-                            {hours}:{minutes}:{seconds} UCT+1
-                        </span>
+                        <span>Time:</span>
+                        <span>{hours}:{minutes}:{seconds} UCT+1</span>
                     </p>
                     <p>
-                        Date: {this.state.time.toDateString()}
+                        <span>Date:</span>
+                        <span>{this.state.time.toDateString()}</span>
                     </p>
                 </div>
             </div>
