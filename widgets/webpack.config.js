@@ -2,10 +2,10 @@ const path = require('path');
 
 module.exports = {
   context: __dirname,
-  entry: "./frontend/widgets.jsx",
+  entry: './frontend/widgets.jsx',
   output: {
     path: path.resolve(__dirname),
-    filename: "bundle.js"
+    filename: 'bundle.js'
   },
   module: {
     rules: [
@@ -26,3 +26,5 @@ module.exports = {
     extensions: [".js", ".jsx", "*"]
   }
 };
+
+

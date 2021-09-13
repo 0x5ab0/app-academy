@@ -1,10 +1,21 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
-// import AutoComplete from './auto';
+import AutoComplete from './auto';
 import Clock from './clock';
-// import Weather from './weather';
+import Weather from './weather';
 import Tabs from './tabs';
+
+const names = [
+  'Abba',
+  'Barney',
+  'Barbara',
+  'Jeff',
+  'Jenny',
+  'Sarah',
+  'Sally',
+  'Xander'
+];
 
 const panes = [
   {title: 'one', content: 'I am the first'},
@@ -16,10 +27,10 @@ function Root() {
   return(
     <div>
       <Clock />
-      {/* <Weather /> */}
+      <Weather />
       <div className='interactive'>
         <Tabs panes={panes} />
-        {/* <AutoComplete names={names} /> */}
+        <AutoComplete names={names} />
       </div>
     </div>
   );
