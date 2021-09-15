@@ -1,15 +1,7 @@
 import { 
     RECEIVE_STEPS,
     RECEIVE_STEP,
-    REMOVE_STEP,
-    receiveSteps,
-    receiveStep,
-    removeStep } from '../actions/step_actions';
-
-// Just for testing. Remove later.
-window.receiveSteps = receiveSteps;
-window.receiveStep = receiveStep;
-window.removeStep = removeStep;
+    REMOVE_STEP } from '../actions/step_actions';
 
 const initialState =  {
   1: {

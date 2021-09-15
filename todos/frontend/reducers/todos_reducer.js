@@ -1,15 +1,7 @@
 import { 
     RECEIVE_TODOS,
     RECEIVE_TODO,
-    REMOVE_TODO,
-    receiveTodo,
-    receiveTodos,
-    removeTodo } from '../actions/todo_actions';
-
-// Just for testing. Remove later.
-window.receiveTodos = receiveTodos;
-window.receiveTodo = receiveTodo;
-window.removeTodo = removeTodo;
+    REMOVE_TODO } from '../actions/todo_actions';
 
 const initialState =  {
     1: {
