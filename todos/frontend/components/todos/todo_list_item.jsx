@@ -1,40 +1,49 @@
 import React from 'react';
+import TodoDetailViewContainer from './todo_detail_view_container';
 
 class TodoListItem extends React.Component {
     constructor(props) {
         super(props);
+        this.state = { detail: false };
 
-        this.handleDelete = this.handleDelete.bind(this);
-        this.handleUpdate = this.handleUpdate.bind(this);
+        this.toggleTodo = this.toggleTodo.bind(this);
+        this.toggleDetail = this.toggleDetail.bind(this);
     }
 
-    handleDelete(e) {
+    toggleTodo(e) {
         e.preventDefault();
-        const todo = this.props.todo;
-        this.props.removeTodo(todo);
+        const toggledTodo = Object.assign(
+            {},
+            this.props.todo,
+            { done: !this.props.todo.done }
+        );
+
+        this.props.receiveTodo(toggledTodo);
     }
 
-    handleUpdate(e) {
+    toggleDetail(e) {
         e.preventDefault();
-        const todo = this.props.todo;
-        this.toggle(todo);
-    }
-
-    toggle(todo) {
-        todo.done = todo.done ? false : true;
-        this.props.receiveTodo(todo);
+        this.setState({ detail: !this.state.detail });
     }
 
     render() {
-        const todo = this.props.todo;
+        const { todo, receiveTodo } = this.props;
+        const { title, done } = todo;
+
+        let detail;
+        if (this.state.detail) {
+            detail = <TodoDetailViewContainer todo={todo} />;
+        }
 
         return (
             <li>
                 <div>
-                    <h3>{ todo.title }</h3>
+                    <h3><a onClick={this.toggleDetail}>{ title }</a></h3>
+                    <button onClick={this.toggleTodo}>
+                        { done ? 'Undo' : 'Done' }
+                    </button>
                 </div>
-                <button onClick={this.handleDelete}>Delete</button>
-                <button onClick={this.handleUpdate}>{ todo.done ? 'Not done' : 'Done' }</button>
+                { detail }
             </li>
         );
     }
