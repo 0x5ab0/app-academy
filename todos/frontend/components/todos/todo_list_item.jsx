@@ -1,4 +1,5 @@
 import React from 'react';
+import TodoDetailView from './todo_detail_view';
 
 class TodoListItem extends React.Component {
     constructor(props) {
@@ -33,8 +34,9 @@ class TodoListItem extends React.Component {
                 <div>
                     <h3>{ todo.title }</h3>
                 </div>
+                <TodoDetailView todo={todo} />
                 <button onClick={this.handleDelete}>Delete</button>
-                <button onClick={this.handleUpdate}>{ todo.done ? 'Not done' : 'Done' }</button>
+                <button onClick={this.handleUpdate}>{ todo.done ? 'Done' : 'Pending' }</button>
             </li>
         );
     }
