@@ -1,5 +1,10 @@
 import React from 'react';
 
+// Bug pending: Toggling steps only appends a new step at the bottom of the list,
+// with the toggled done/undone state. Clicking delete only remove the bottom
+// step. Might have something to do with initialState; maybe sorts itself out
+// after integrating an actual backend / DB.
+
 class StepListItem extends React.Component {
     constructor(props) {
         super(props);
@@ -18,19 +23,17 @@ class StepListItem extends React.Component {
     }
 
     render() {
-        const { step, removeStep } = this.props;
-
         return (
             <li>
                 <div>
-                    <h3>{ step.title }</h3>
-                    <p>{ step.body }</p>
+                    <h3>{ this.props.step.title }</h3>
+                    <p>{ this.props.step.body }</p>
                 </div>
                 <div>
                     <button onClick={this.toggleStep}>
-                        { step.done ? 'Undo' : 'Done' }
+                        { this.props.step.done ? 'Undo' : 'Done' }
                     </button>
-                    <button onClick={removeStep}>
+                    <button onClick={this.props.removeStep}>
                         Delete
                     </button>
                 </div>
