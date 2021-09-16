@@ -1,8 +1,12 @@
 import React from 'react';
+import TodoListContainer from './todos/todo_list_container';
 
 const App = () => {
     return (
-        <h1>crownie23's Todo List</h1>
+        <div>
+            <h1>crownie23's Todo List</h1>
+            <TodoListContainer />
+        </div>
     );
 };
 
