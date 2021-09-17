@@ -1,5 +1,5 @@
 import React from 'react';
-import { uniqueId } from '../util/id_generator';
+import { uniqueId } from '../../util/id_generator';
 
 class TodoForm extends React.Component {
 
@@ -21,11 +21,13 @@ class TodoForm extends React.Component {
     handleSubmit(e) {
         e.preventDefault();
         const todo = Object.assign({}, this.state, { id: uniqueId() });
-        this.props.receiveTodo(todo);
-        this.setState({
-            title: "",
-            body: ""
-        }); // reset form
+        this.props.createTodo({todo}).then(
+            () => this.setState({
+                title: '',
+                body: '',
+                done: false
+            })
+        ); // reset form
     }
 
     render () {
