@@ -1,7 +1,7 @@
 class Api::StepsController < ApplicationController
     def index
         steps = Todo.find(params[:todo_id]).steps
-        render json: step
+        render json: steps
     end
 
     def create
@@ -16,13 +16,17 @@ class Api::StepsController < ApplicationController
 
     def update
         step = Step.find(params[:id])
-
         if step
-            step.update(step_params)
-            render json: step
+          step.update(step_params)
+          render json: step
         else
-            render json: { message: 'not found', status: 404 }
+          render json: { message: 'not found', status: 404 }
         end
+    end
+
+    def destroy
+        step = Step.find(params[:id]).destroy
+        render json: step
     end
 
     private

@@ -470,7 +470,7 @@ __webpack_require__.r(__webpack_exports__);
 var StepList = function StepList(_ref) {
   var steps = _ref.steps,
       todo_id = _ref.todo_id,
-      receiveStep = _ref.receiveStep;
+      createStep = _ref.createStep;
   var stepItems = steps.map(function (step) {
     return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_step_list_item_container__WEBPACK_IMPORTED_MODULE_1__["default"], {
       key: step.id,
@@ -631,7 +631,8 @@ var mapDispatchToProps = function mapDispatchToProps(dispatch, _ref) {
   var step = _ref.step;
   return {
     destroyStep: function destroyStep() {
-      return dispatch(Object(_actions_step_actions__WEBPACK_IMPORTED_MODULE_2__["destroyStep"])(step));
+      console.log("Destroying step: ".concat(step.title));
+      dispatch(Object(_actions_step_actions__WEBPACK_IMPORTED_MODULE_2__["destroyStep"])(step));
     },
     updateStep: function updateStep(updatedStep) {
       return dispatch(Object(_actions_step_actions__WEBPACK_IMPORTED_MODULE_2__["updateStep"])(updatedStep));
@@ -802,6 +803,18 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
 
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
 
+function _toConsumableArray(arr) { return _arrayWithoutHoles(arr) || _iterableToArray(arr) || _unsupportedIterableToArray(arr) || _nonIterableSpread(); }
+
+function _nonIterableSpread() { throw new TypeError("Invalid attempt to spread non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
+
+function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
+
+function _iterableToArray(iter) { if (typeof Symbol !== "undefined" && iter[Symbol.iterator] != null || iter["@@iterator"] != null) return Array.from(iter); }
+
+function _arrayWithoutHoles(arr) { if (Array.isArray(arr)) return _arrayLikeToArray(arr); }
+
+function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) { arr2[i] = arr[i]; } return arr2; }
+
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
 function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
@@ -839,13 +852,24 @@ var TodoForm = /*#__PURE__*/function (_React$Component) {
     _this.state = {
       title: "",
       body: "",
-      done: false
+      tag_names: [],
+      done: false,
+      newTag: ""
     };
     _this.handleSubmit = _this.handleSubmit.bind(_assertThisInitialized(_this));
+    _this.addTag = _this.addTag.bind(_assertThisInitialized(_this));
     return _this;
   }
 
   _createClass(TodoForm, [{
+    key: "addTag",
+    value: function addTag(e) {
+      this.setState({
+        tag_names: [].concat(_toConsumableArray(this.state.tag_names), [this.state.newTag]),
+        newTag: ""
+      });
+    }
+  }, {
     key: "update",
     value: function update(property) {
       var _this2 = this;
@@ -866,13 +890,35 @@ var TodoForm = /*#__PURE__*/function (_React$Component) {
       }).then(function () {
         return _this3.setState({
           title: '',
-          body: ''
+          body: '',
+          tag_names: []
         });
+      });
+    }
+  }, {
+    key: "removeTag",
+    value: function removeTag(idx) {
+      this.setState({
+        tag_names: this.state.tag_names.filter(function (_, index) {
+          return index !== idx;
+        })
       });
     }
   }, {
     key: "render",
     value: function render() {
+      var _this4 = this;
+
+      var tag_names = this.state.tag_names.map(function (tag, idx) {
+        var clickHandler = function clickHandler() {
+          return _this4.removeTag(idx);
+        };
+
+        return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
+          key: idx,
+          onClick: clickHandler
+        }, tag);
+      });
       return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("form", {
         className: "todo-form",
         onSubmit: this.handleSubmit
@@ -892,7 +938,18 @@ var TodoForm = /*#__PURE__*/function (_React$Component) {
         value: this.state.body,
         placeholder: "2% or whatever is on sale!",
         onChange: this.update('body')
-      })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+      })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", null, "Tags", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+        className: "input",
+        placeholder: "Enter a new tag",
+        onChange: this.update('newTag'),
+        value: this.state.newTag
+      }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+        type: "button",
+        className: "button",
+        onClick: this.addTag
+      }, "Add Tag")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", {
+        className: "tag-list"
+      }, tag_names), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
         className: "create-button"
       }, "Create Todo!"));
     }
@@ -1443,7 +1500,7 @@ var createStep = function createStep(todo_id, step) {
 var updateStep = function updateStep(step) {
   return $.ajax({
     method: 'PATCH',
-    url: "/api/todos/".concat(step.id),
+    url: "/api/steps/".concat(step.id),
     data: {
       step: step
     }

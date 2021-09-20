@@ -4,7 +4,7 @@ import StepListItem from './step_list_item';
 import { updateStep, destroyStep } from '../../actions/step_actions';
 
 const mapDispatchToProps = (dispatch, { step }) => ({
-    destroyStep: () => dispatch(destroyStep(step)),
+    destroyStep: () => { console.log(`Destroying step: ${step.title}`); dispatch(destroyStep(step))},
     updateStep: updatedStep => dispatch(updateStep(updatedStep))
 });
 
