@@ -1,16 +1,21 @@
 import React from 'react';
+
 import StepListContainer from '../step_list/step_list_container';
 
 class TodoDetailView extends React.Component {
+    componentDidMount() {
+        this.props.requestSteps();
+    }
 
     render() {
-        const { todo, removeTodo } = this.props;
-
+        const { todo, destroyTodo } = this.props;
         return (
             <div>
-                <p>{ todo.body }</p>
-                <StepListContainer todo_id={todo.id}/>
-                <button onClick={removeTodo}>Delete Todo</button>
+                <p className="todo-body">{ todo.body }</p>
+                <StepListContainer todo_id={ todo.id } />
+                <button className="delete-button" onClick={ destroyTodo }>
+                    Delete Todo
+                </button>
             </div>
         );
     }

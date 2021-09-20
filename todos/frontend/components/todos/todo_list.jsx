@@ -9,26 +9,23 @@ class TodoList extends React.Component {
     }
 
     render() {
-        // const { todos, createTodo } = this.props;
-        const todos = this.props.todos;
-        const createTodo = this.props.createTodo;
-        const receiveTodo = this.props.receiveTodo;
+        const { todos, createTodo, updateTodo, errors } = this.props;
         
         const todoItems = todos.map(todo => (
                 <TodoListItem
-                    key = {`todo-list-item${todo.id}`}
-                    todo={todo}
-                    receiveTodo={ receiveTodo } />
+                    key={ todo.id }
+                    todo={ todo }
+                    updateTodo={ updateTodo } />
             )
         );
 
         return (
             <div>
-                <ul>
+                <TodoForm createTodo={ createTodo } errors={ errors } />
+                <ul className="todo-list">
                     { todoItems }
                 </ul>
-                <TodoForm createTodo={ createTodo } />
-            </div>            
+            </div>
         );
     }
 };
