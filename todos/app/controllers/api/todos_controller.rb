@@ -1,6 +1,8 @@
 class Api::TodosController < ApplicationController
+  before_action :deny_access_if_not_logged_in
+
   def index
-    render json: Todo.all, include: :tags
+    render json: Todo.all.where(user_id: current_user.id), include: :tags
   end
 
   def show
@@ -8,7 +10,7 @@ class Api::TodosController < ApplicationController
   end
 
   def create
-    @todo = Todo.new(todo_params)
+    @todo = current_user.todos.new(todo_params)
     if @todo.save
       render json: @todo, include: :tags
     else
@@ -26,7 +28,7 @@ class Api::TodosController < ApplicationController
   end
 
   def destroy
-    @todo = Todo.find(params[:id])
+    @todo = current_user.todos.find(params[:id])
     @todo.destroy
     render json: @todo, include: :tags
   end
