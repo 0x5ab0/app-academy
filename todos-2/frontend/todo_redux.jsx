@@ -16,21 +16,21 @@ import Root from './components/root';
 //   }
 // }
 
-// Phase 2: Refactoring
-const addLoggingToDispatch = store => next => action => {
-  console.log(store.getState());
-  console.log(action);
-  next(action);
-  console.log(store.getState());
-};
+// // Phase 2: Refactoring
+// const addLoggingToDispatch = store => next => action => {
+//   console.log(store.getState());
+//   console.log(action);
+//   next(action);
+//   console.log(store.getState());
+// };
 
-const applyMiddlewares = (store, ...middlewares) => {
-  let dispatch = store.dispatch;
-  middlewares.forEach(middleware => {
-    dispatch = middleware(store)(dispatch);
-  });
-  return Object.assign({}, store, { dispatch });
-};
+// const applyMiddlewares = (store, ...middlewares) => {
+//   let dispatch = store.dispatch;
+//   middlewares.forEach(middleware => {
+//     dispatch = middleware(store)(dispatch);
+//   });
+//   return Object.assign({}, store, { dispatch });
+// };
 
 document.addEventListener('DOMContentLoaded', () => {
   const preloadedState = localStorage.state ?
@@ -40,8 +40,8 @@ document.addEventListener('DOMContentLoaded', () => {
   // // Phase 1: Logging
   // store.dispatch = addLoggingToDispatch(store);
 
-  // Phase 2: Refactoring
-  store = applyMiddlewares(store, addLoggingToDispatch)
+  // // Phase 2: Refactoring
+  // store = applyMiddlewares(store, addLoggingToDispatch)
 
   const root = document.getElementById('content');
   ReactDOM.render(<Root store={store} />, root);

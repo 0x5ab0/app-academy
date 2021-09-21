@@ -1182,10 +1182,33 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _reducers_root_reducer__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../reducers/root_reducer */ "./frontend/reducers/root_reducer.js");
 
 
+ // Phase 3: Redux applyMiddleware
+
+var addLoggingToDispatch = function addLoggingToDispatch(store) {
+  return function (next) {
+    return function (action) {
+      console.log(store.getState());
+      console.log(action);
+      next(action);
+      console.log(store.getState());
+    };
+  };
+}; // Bonus Phase: Add an extra middleware!
+
+
+var sillyMiddleware = function sillyMiddleware(store) {
+  return function (next) {
+    return function (action) {
+      console.log("Silly");
+      next(action);
+    };
+  };
+};
 
 var configureStore = function configureStore() {
   var preloadedState = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};
-  var store = Object(redux__WEBPACK_IMPORTED_MODULE_0__["createStore"])(_reducers_root_reducer__WEBPACK_IMPORTED_MODULE_1__["default"], preloadedState);
+  var store = Object(redux__WEBPACK_IMPORTED_MODULE_0__["createStore"])(_reducers_root_reducer__WEBPACK_IMPORTED_MODULE_1__["default"], preloadedState, // Phase 3: Redux applyMiddleware + Bonus
+  Object(redux__WEBPACK_IMPORTED_MODULE_0__["applyMiddleware"])(addLoggingToDispatch, sillyMiddleware));
   store.subscribe(function () {
     localStorage.state = JSON.stringify(store.getState());
   });
@@ -1224,41 +1247,28 @@ __webpack_require__.r(__webpack_exports__);
 //     console.log(store.getState());
 //   }
 // }
-// Phase 2: Refactoring
-
-var addLoggingToDispatch = function addLoggingToDispatch(store) {
-  return function (next) {
-    return function (action) {
-      console.log(store.getState());
-      console.log(action);
-      next(action);
-      console.log(store.getState());
-    };
-  };
-};
-
-var applyMiddlewares = function applyMiddlewares(store) {
-  var dispatch = store.dispatch;
-
-  for (var _len = arguments.length, middlewares = new Array(_len > 1 ? _len - 1 : 0), _key = 1; _key < _len; _key++) {
-    middlewares[_key - 1] = arguments[_key];
-  }
-
-  middlewares.forEach(function (middleware) {
-    dispatch = middleware(store)(dispatch);
-  });
-  return Object.assign({}, store, {
-    dispatch: dispatch
-  });
-};
+// // Phase 2: Refactoring
+// const addLoggingToDispatch = store => next => action => {
+//   console.log(store.getState());
+//   console.log(action);
+//   next(action);
+//   console.log(store.getState());
+// };
+// const applyMiddlewares = (store, ...middlewares) => {
+//   let dispatch = store.dispatch;
+//   middlewares.forEach(middleware => {
+//     dispatch = middleware(store)(dispatch);
+//   });
+//   return Object.assign({}, store, { dispatch });
+// };
 
 document.addEventListener('DOMContentLoaded', function () {
   var preloadedState = localStorage.state ? JSON.parse(localStorage.state) : {};
   var store = Object(_store_store__WEBPACK_IMPORTED_MODULE_2__["default"])(preloadedState); // // Phase 1: Logging
   // store.dispatch = addLoggingToDispatch(store);
-  // Phase 2: Refactoring
+  // // Phase 2: Refactoring
+  // store = applyMiddlewares(store, addLoggingToDispatch)
 
-  store = applyMiddlewares(store, addLoggingToDispatch);
   var root = document.getElementById('content');
   react_dom__WEBPACK_IMPORTED_MODULE_1___default.a.render( /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_root__WEBPACK_IMPORTED_MODULE_3__["default"], {
     store: store
