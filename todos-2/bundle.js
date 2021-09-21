@@ -1214,23 +1214,51 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
- // Phase 1: Logging
+ // // Phase 1: Logging
+// const addLoggingToDispatch = store => {
+//   const OGDispatch = store.dispatch
+//   return (action) => {
+//     console.log(store.getState());
+//     console.log(action);
+//     OGDispatch(action);
+//     console.log(store.getState());
+//   }
+// }
+// Phase 2: Refactoring
 
 var addLoggingToDispatch = function addLoggingToDispatch(store) {
-  var OGDispatch = store.dispatch;
-  return function (action) {
-    console.log(store.getState());
-    console.log(action);
-    OGDispatch(action);
-    console.log(store.getState());
+  return function (next) {
+    return function (action) {
+      console.log(store.getState());
+      console.log(action);
+      next(action);
+      console.log(store.getState());
+    };
   };
+};
+
+var applyMiddlewares = function applyMiddlewares(store) {
+  var dispatch = store.dispatch;
+
+  for (var _len = arguments.length, middlewares = new Array(_len > 1 ? _len - 1 : 0), _key = 1; _key < _len; _key++) {
+    middlewares[_key - 1] = arguments[_key];
+  }
+
+  middlewares.forEach(function (middleware) {
+    dispatch = middleware(store)(dispatch);
+  });
+  return Object.assign({}, store, {
+    dispatch: dispatch
+  });
 };
 
 document.addEventListener('DOMContentLoaded', function () {
   var preloadedState = localStorage.state ? JSON.parse(localStorage.state) : {};
-  var store = Object(_store_store__WEBPACK_IMPORTED_MODULE_2__["default"])(preloadedState); // Phase 1: Logging
+  var store = Object(_store_store__WEBPACK_IMPORTED_MODULE_2__["default"])(preloadedState); // // Phase 1: Logging
+  // store.dispatch = addLoggingToDispatch(store);
+  // Phase 2: Refactoring
 
-  store.dispatch = addLoggingToDispatch(store);
+  store = applyMiddlewares(store, addLoggingToDispatch);
   var root = document.getElementById('content');
   react_dom__WEBPACK_IMPORTED_MODULE_1___default.a.render( /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_root__WEBPACK_IMPORTED_MODULE_3__["default"], {
     store: store
