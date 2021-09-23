@@ -1,5 +1,7 @@
 import React from 'react';
+import { Route } from 'react-router';
 import Item from '../items/item';
+import ItemDetailContainer from '../items/item_detail_container';
 
 class PokemonDetail extends React.Component {
     componentDidMount() {
@@ -20,6 +22,7 @@ class PokemonDetail extends React.Component {
                 <figure>
                     <img src={ this.props.pokemon.imageUrl } alt={ this.props.pokemon.name } />
                 </figure>
+
                 <ul>
                     <li><h2>{ this.props.pokemon.name }</h2></li>
                     <li>Type: { this.props.pokemon.pokeType }</li>
@@ -27,6 +30,7 @@ class PokemonDetail extends React.Component {
                     <li>Defense: { this.props.pokemon.defense }</li>
                     <li>Moves: { this.props.moves.join(', ') }</li>
                 </ul>
+
                 <section className="toys">
                     <h3>Items</h3>
                     <ul className="toy-list">
@@ -35,6 +39,8 @@ class PokemonDetail extends React.Component {
                         )) }
                     </ul>
                 </section>
+
+                <Route path="/pokemon/:pokemonId/item/:itemId" component={ ItemDetailContainer } />
             </section>
 
         )
