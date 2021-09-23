@@ -1,26 +1,32 @@
 import React from 'react';
 
-class PokemonIndex extends React.Component {
-    constructor(props) {
-        super(props)
-    }
 
-    componentDidMount() {
-        this.props.requestAllPokemon();
-    }
-
-    render() {
-        return(
-            <ul>
-                { this.props.pokemon.map(pokemon => (
-                    <li>
-                        <img src={ pokemon.imageUrl } height="20px" width="20px" />
-                        <span> { pokemon.name }</span>
-                    </li>
-                )) }
-            </ul>
-        );
-    }
-}
-
-export default PokemonIndex;
+class PokemonIndex extends React.Component{
+  constructor(props){
+  super(props)
+  }
+  
+  componentDidMount(){
+  this.props.requestAllPokemon()
+  }
+  
+  render(){
+    return (
+    <section className="pokedex">
+      <ul>
+      {this.props.pokemon.map((poke) => (
+        <li className="pokemon-index-item">
+          <span>{poke.id}</span>
+          <img src={poke.imageUrl}/>
+          <span>{poke.name}</span>
+        </li>
+      ))}
+      </ul>
+    </section>
+    )
+  }
+  }
+  
+  
+  
+  export default PokemonIndex;
