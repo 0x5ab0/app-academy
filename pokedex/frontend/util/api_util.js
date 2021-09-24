@@ -1,3 +1,5 @@
+import { receiveSinglePokemon } from "../actions/pokemon_actions"
+
 export const fetchAllPokemon = () => {
     return $.ajax({
         method: "GET",
@@ -9,5 +11,13 @@ export const fetchSinglePokemon = (id) => {
     return $.ajax({
         method: "GET",
         url: `/api/pokemon/${id}`
+    })
+}
+
+export const createPokemon = (pokemon) => {
+    return $.ajax({
+        method: "POST",
+        url: "/api/pokemon",
+        data: { pokemon }
     })
 }

@@ -3,6 +3,7 @@ import { Route } from 'react-router';
 
 import PokemonIndexItem from './pokemon_index_item';
 import PokemonDetailContainer from './pokemon_detail_container';
+import PokemonFormContainer from './pokemon_form_container';
 
 class PokemonIndex extends React.Component{
     constructor(props){
@@ -20,6 +21,7 @@ class PokemonIndex extends React.Component{
 
         return (
             <section className="pokedex">
+                <Route exact path='/' component={ PokemonFormContainer } />
                 <Route path='/pokemon/:pokemonId' component={ PokemonDetailContainer } />
                 <ul>{ pokemonItems }</ul>
             </section>
